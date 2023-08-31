@@ -37,14 +37,4 @@ public class AuthService
         }
     }
 
-    private static string Base64UrlDecode(string input)
-    {
-        string modifiedInput = input.Replace('-', '+').Replace('_', '/');
-        int padding = 4 - (modifiedInput.Length % 4);
-        modifiedInput += new string('=', padding);
-
-        byte[] data = Convert.FromBase64String(modifiedInput);
-        return Encoding.UTF8.GetString(data);
-    }
-
 }

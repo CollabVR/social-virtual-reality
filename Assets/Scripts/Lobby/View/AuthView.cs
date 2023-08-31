@@ -13,7 +13,7 @@ public class AuthView : MonoBehaviour
     AuthService authService = new AuthService();
 
     [Header("Elements")]
-    public TMP_InputField username;
+    public TMP_InputField email;
     public TMP_InputField password;
     public TMP_Text message;
 
@@ -26,7 +26,7 @@ public class AuthView : MonoBehaviour
 
     void Login()
     {
-        StartCoroutine(authService.SignIn(username: username.text, password: password.text,
+        StartCoroutine(authService.SignIn(username: email.text, password: password.text,
         success: (user) =>
         {
             authService.SaveUser(user);

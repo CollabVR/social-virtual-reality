@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class UserAuth
+public class User
 {
+    public int sub;
     public string email;
-    public string password;
+    public string fullName;
+    public List<Roles> roles;
 }

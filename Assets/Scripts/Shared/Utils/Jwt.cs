@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using UnityEngine;
 
 public static class JWT
 {
@@ -34,5 +35,11 @@ public static class JWT
 
         byte[] data = Convert.FromBase64String(modifiedInput);
         return Encoding.UTF8.GetString(data);
+    }
+
+    public static T DecodePayload<T>(string payload)
+    {
+        string decodedPayload = Base64UrlDecode(payload);
+        return JsonUtility.FromJson<T>(decodedPayload);
     }
 }

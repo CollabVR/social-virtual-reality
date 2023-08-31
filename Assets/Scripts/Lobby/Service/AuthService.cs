@@ -12,8 +12,8 @@ public class AuthService
     {
         string url = Constants.API + "/accounts/auth/sign-in";
 
-        using UnityWebRequest request = UnityWebRequest.Post(url, 
-            new Dictionary<string, string>
+        using UnityWebRequest request = UnityWebRequest
+            .Post(url, new Dictionary<string, string>
             {
                 ["email"] = username,
                 ["password"] = password,
@@ -21,23 +21,16 @@ public class AuthService
 
         yield return request.SendWebRequest();
 
-        // response
-        Debug.Log("Request Result: " + request.result);
-
         if (request.result != UnityWebRequest.Result.Success)
         {
-            Debug.Log("Response Error");
             error(request.error);
         }
         else
         {
-            Debug.Log("Response Success");
             string jsonRes = request.downloadHandler.text;
             var authResponse = JsonUtility.FromJson<AuthResponse>(jsonRes);
 
-
             string[] jwt = authResponse.accessToken.Split(".");
-
             var payloadData = JWT.DecodePayload(jwt[1]);
 
             Debug.Log(payloadData["email"]);

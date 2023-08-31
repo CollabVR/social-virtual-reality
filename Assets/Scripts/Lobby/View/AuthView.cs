@@ -26,9 +26,6 @@ public class AuthView : MonoBehaviour
 
     void Login()
     {
-        Debug.Log("username: " + username.text);
-        Debug.Log("password: " + password.text);
-
         StartCoroutine(authService.SignIn(username: username.text, password: password.text,
         success: (user) =>
         {

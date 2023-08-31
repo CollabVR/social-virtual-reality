@@ -12,7 +12,7 @@ public class AuthService
     {
         string url = Constants.API + "/accounts/auth/sign-in";
 
-        using UnityWebRequest request = UnityWebRequest.Post(url,
+        using UnityWebRequest request = UnityWebRequest.Post(url, 
             new Dictionary<string, string>
             {
                 ["email"] = username,
@@ -37,40 +37,10 @@ public class AuthService
 
 
             string[] jwt = authResponse.accessToken.Split(".");
-            string encodedPayload = jwt[1];
-            string decodedPayload = Base64UrlDecode(encodedPayload);
 
-            Dictionary<string, string> payloadData = new Dictionary<string, string>();
-            string[] payloadFields = decodedPayload.Split(',');
-
-            foreach (string field in payloadFields)
-            {
-                string[] keyValue = field.Split(':');
-                if (keyValue.Length == 2)
-                {
-                    string key = keyValue[0].Trim().Trim('"');
-                    string value = keyValue[1].Trim().Trim('"');
-                    payloadData[key] = value;
-                }
-            }
+            var payloadData = JWT.DecodePayload(jwt[1]);
 
             Debug.Log(payloadData["email"]);
-
-
-
-            /*
-            Debug.Log(authResponse.accessToken);
-            Debug.Log(payload);
-            string decodedPayload = Encoding.UTF8.GetString(Convert.FromBase64String(payload));
-
-            // byte[] payloadBytes = Convert.FromBase64String(payload);
-            // string payloadJson = Encoding.UTF8.GetString(payloadBytes);
-
-            Debug.Log(decodedPayload);
-            */
-
-            // UserAuth userAuth = JsonUtility.FromJson<UserAuth>(json);
-            // success(userAuth);
         }
     }
 

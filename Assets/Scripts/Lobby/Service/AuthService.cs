@@ -8,7 +8,7 @@ using System.Text;
 
 public class AuthService
 {
-    public IEnumerator SignIn(string username, string password, Action<bool> success, Action<string> error)
+    public IEnumerator SignIn(string username, string password, Action<User> success, Action<string> error)
     {
         string url = Constants.API + "/accounts/auth/sign-in";
 
@@ -31,10 +31,21 @@ public class AuthService
             var authResponse = JsonUtility.FromJson<AuthResponse>(jsonRes);
 
             string[] jwt = authResponse.accessToken.Split(".");
-            var payloadData = JWT.DecodePayload(jwt[1]);
+            var user = JWT.DecodePayload<User>(jwt[1]);
 
-            Debug.Log(payloadData["email"]);
+            success(user);
         }
+    }
+
+    public void SaveUser(User user)
+    {
+        PlayerPrefs.SetString(Constants.USER, JsonUtility.ToJson(user));
+    }
+
+    public User GetUser()
+    {
+        var userJson = PlayerPrefs.GetString(Constants.USER);
+        return JsonUtility.FromJson<User>(userJson);
     }
 
 }

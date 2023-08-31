@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class UserAuth
+public class AuthResponse
 {
-    public string email;
-    public string password;
+    public string accessToken;
 }

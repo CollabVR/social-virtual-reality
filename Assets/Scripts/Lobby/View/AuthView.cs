@@ -29,12 +29,13 @@ public class AuthView : MonoBehaviour
         Debug.Log("username: " + username.text);
         Debug.Log("password: " + password.text);
 
-        StartCoroutine(authService.Login(username: username.text, password: password.text,
+        StartCoroutine(authService.SignIn(username: username.text, password: password.text,
         success: (user) =>
         {
-            Debug.Log("user: " + user.value);
+            // Debug.Log("user: " + user.value);
             // message.text = "Credenciales incorrectos";
             // PhotonNetwork.NickName = "asd";
+            Debug.Log("success");
             LoginSuccess();
         },
         error: (error) =>

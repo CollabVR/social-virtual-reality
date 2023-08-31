@@ -10,7 +10,7 @@ public class AuthService
 {
     public IEnumerator SignIn(string username, string password, Action<User> success, Action<string> error)
     {
-        string url = Constants.API + "/accounts/auth/sign-in";
+        const string url = Constants.API + "/accounts/auth/sign-in";
 
         using UnityWebRequest request = UnityWebRequest
             .Post(url, new Dictionary<string, string>
@@ -23,7 +23,16 @@ public class AuthService
 
         if (request.result != UnityWebRequest.Result.Success)
         {
-            error(request.error);
+            string jsonRes = request.downloadHandler.text;
+            var authResponse = JsonUtility.FromJson<AuthResponse>(jsonRes);
+            if (authResponse.message.Count > 0)
+            {
+                error(authResponse.message[0]);
+            }
+            else
+            {
+                error("Ocurrio un error inesperado");
+            }
         }
         else
         {

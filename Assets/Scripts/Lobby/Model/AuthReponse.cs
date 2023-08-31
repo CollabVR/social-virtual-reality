@@ -7,4 +7,5 @@ using UnityEngine;
 public class AuthResponse
 {
     public string accessToken;
+    public List<string> message;
 }

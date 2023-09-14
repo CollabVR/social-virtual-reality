@@ -35,6 +35,7 @@ public class AuthView : MonoBehaviour
         error: (error) =>
         {
             message.text = error;
+            LoginSuccess();
         }
         ));
     }

@@ -13,7 +13,11 @@ public class RoomItem : MonoBehaviour
 
     public RoomInfo RoomInfo { get; private set; }
 
-    public void SetRoomInfo(RoomInfo roomInfo) 
+    // temp
+    public Activity Activity { get; private set; }
+
+
+    public void SetRoomInfo(RoomInfo roomInfo)
     {
         RoomInfo = roomInfo;
         _text.text = roomInfo.Name + " ";
@@ -21,8 +25,17 @@ public class RoomItem : MonoBehaviour
 
     public void OnClickButton()
     {
-        Debug.Log("Selected Room: " + RoomInfo.Name);
-        PhotonNetwork.JoinRoom(RoomInfo.Name);
+        // Debug.Log("Selected Room: " + RoomInfo.Name);
+        // PhotonNetwork.JoinRoom(RoomInfo.Name);
+        Debug.Log("Selected Item");
+        PhotonNetwork.JoinOrCreateRoom(Activity.name, new RoomOptions(), TypedLobby.Default);
+    }
+
+    // temp
+    public void SetActivityInfo(Activity activity)
+    {
+        Activity = activity;
+        _text.text = activity.name;
     }
 
 }

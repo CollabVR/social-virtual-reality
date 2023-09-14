@@ -14,6 +14,14 @@ public class RoomList : MonoBehaviourPunCallbacks
 
     private List<RoomItem> roomItems = new List<RoomItem>(); // _listings
 
+    ActivityService activityService = new ActivityService();
+
+    void Start()
+    {
+        Debug.Log("Get Activities");
+        GetActivities();
+    }
+
     public void updateRoomList(List<RoomInfo> roomList)
     {
         foreach (RoomInfo room in roomList)
@@ -22,7 +30,6 @@ public class RoomList : MonoBehaviourPunCallbacks
             {
                 Debug.Log("Room removed: " + room.Name);
                 int index = roomItems.FindIndex(x => x.RoomInfo.Name == room.Name);
-                Debug.Log("Room index: " + index);
 
                 if (index != -1)
                 {
@@ -37,6 +44,31 @@ public class RoomList : MonoBehaviourPunCallbacks
                 roomItem.SetRoomInfo(room);
                 roomItems.Add(roomItem);
             }
+        }
+    }
+
+    void GetActivities()
+    {
+        StartCoroutine(activityService.GetActivities(
+        success: (user) =>
+        {
+
+        },
+        error: (error) =>
+        {
+
+        }
+        ));
+
+    }
+
+    public void UpdateActivitiesList(List<Activity> activities)
+    {
+        foreach (Activity activity in activities)
+        {
+            RoomItem roomItem = Instantiate(_roomItem, _content);
+            roomItem.SetActivityInfo(activity);
+            roomItems.Add(roomItem);
         }
     }
 

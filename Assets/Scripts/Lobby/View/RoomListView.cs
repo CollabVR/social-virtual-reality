@@ -4,7 +4,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 
-public class RoomList : MonoBehaviourPunCallbacks
+public class RoomListView : MonoBehaviourPunCallbacks
 {
     [SerializeField]
     private Transform _content;
@@ -16,10 +16,18 @@ public class RoomList : MonoBehaviourPunCallbacks
 
     ActivityService activityService = new ActivityService();
 
-    void Start()
+    new void OnEnable()
     {
-        Debug.Log("Get Activities");
-        GetActivities();
+        StartCoroutine(activityService.GetActivities(
+            success: (res) =>
+            {
+                UpdateActivitiesList(res);
+            },
+            error: (e) =>
+            {
+                Debug.Log("Error al cargar las actividades");
+            }
+        ));
     }
 
     public void updateRoomList(List<RoomInfo> roomList)
@@ -45,21 +53,6 @@ public class RoomList : MonoBehaviourPunCallbacks
                 roomItems.Add(roomItem);
             }
         }
-    }
-
-    void GetActivities()
-    {
-        StartCoroutine(activityService.GetActivities(
-        success: (user) =>
-        {
-
-        },
-        error: (error) =>
-        {
-
-        }
-        ));
-
     }
 
     public void UpdateActivitiesList(List<Activity> activities)

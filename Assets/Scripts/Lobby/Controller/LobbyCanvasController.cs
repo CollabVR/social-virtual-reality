@@ -30,8 +30,6 @@ public class LobbyCanvasController : MonoBehaviourPunCallbacks
 
         Debug.Log("Joining to Lobby:");
         PhotonNetwork.JoinLobby();
-
-        // temp
     }
 
     public override void OnDisconnected(DisconnectCause cause)
@@ -43,8 +41,8 @@ public class LobbyCanvasController : MonoBehaviourPunCallbacks
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
-        var roomListPanel = roomsPanel.GetComponentInChildren<RoomList>();
-        roomListPanel.updateRoomList(roomList);
+        // var roomListPanel = roomsPanel.GetComponentInChildren<RoomListView>();
+        // roomListPanel.updateRoomList(roomList);
     }
 
     public void ShowLoadingPanel()
@@ -66,22 +64,6 @@ public class LobbyCanvasController : MonoBehaviourPunCallbacks
         roomsPanel.SetActive(true);
         loadingPanel.SetActive(false);
         authPanel.SetActive(false);
-
-        // temp
-        var roomListPanel = roomsPanel.GetComponentInChildren<RoomList>();
-
-        StartCoroutine(activityService.GetActivities(
-            success: (res) =>
-            {
-                Debug.Log("Update Activities");
-                roomListPanel.UpdateActivitiesList(res);
-            },
-            error: (e) =>
-            {
-
-            }
-        ));
-
     }
 
 

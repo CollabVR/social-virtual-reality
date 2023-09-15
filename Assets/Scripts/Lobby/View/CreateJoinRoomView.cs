@@ -6,7 +6,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
 
-public class CreateJoinRoom : MonoBehaviourPunCallbacks
+public class CreateJoinRoomView : MonoBehaviourPunCallbacks
 {
     public TMP_InputField roomName;
 

@@ -17,12 +17,11 @@ public class ActivityService
         if (request.result != UnityWebRequest.Result.Success)
         {
             Debug.Log(request.result);
+            error("Ocurrio un error");
         }
         else
         {
-            Debug.Log(request.result);
             string jsonRes = request.downloadHandler.text;
-            Debug.Log(jsonRes);
 
             var res = JsonUtility.FromJson<ActivityResponse>("{\"activities\":" + jsonRes + "}");
             success(res.activities);

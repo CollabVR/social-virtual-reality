@@ -15,7 +15,7 @@ public class LobbyCanvasController : MonoBehaviourPunCallbacks
     public GameObject roomsPanel;
     public GameObject authPanel;
 
-    ActivityService activityService = new ActivityService();
+    public Activity selectedActivity;
 
     void Start()
     {
@@ -45,6 +45,18 @@ public class LobbyCanvasController : MonoBehaviourPunCallbacks
         // roomListPanel.updateRoomList(roomList);
     }
 
+    public override void OnJoinedRoom()
+    {
+        Debug.Log("Joining to: " + selectedActivity.name);
+        PhotonNetwork.LoadLevel(selectedActivity.environmentId);
+    }
+
+    public override void OnJoinRoomFailed(short code, string message)
+    {
+        Debug.Log("OnJoinRoomFailed -> CODE: " + code);
+        Debug.Log("OnJoinRoomFailed: Message -> " + message);
+    }
+
     public void ShowLoadingPanel()
     {
         loadingPanel.SetActive(true);
@@ -65,6 +77,7 @@ public class LobbyCanvasController : MonoBehaviourPunCallbacks
         loadingPanel.SetActive(false);
         authPanel.SetActive(false);
     }
+
 
 
 }

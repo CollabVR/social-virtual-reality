@@ -12,22 +12,13 @@ public class RoomListView : MonoBehaviourPunCallbacks
     [SerializeField]
     private RoomItem _roomItem;
 
-    private List<RoomItem> roomItems = new List<RoomItem>(); // _listings
+    private List<RoomItem> roomItems = new List<RoomItem>();
 
     ActivityService activityService = new ActivityService();
 
     new void OnEnable()
     {
-        StartCoroutine(activityService.GetActivities(
-            success: (res) =>
-            {
-                UpdateActivitiesList(res);
-            },
-            error: (e) =>
-            {
-                Debug.Log("Error al cargar las actividades");
-            }
-        ));
+        GetAndUpdateActivities();
     }
 
     public void updateRoomList(List<RoomInfo> roomList)
@@ -48,7 +39,7 @@ public class RoomListView : MonoBehaviourPunCallbacks
             else
             {
                 Debug.Log("Room created: " + room.Name);
-                RoomItem roomItem = Instantiate(_roomItem, _content); // _listing
+                RoomItem roomItem = Instantiate(_roomItem, _content);
                 roomItem.SetRoomInfo(room);
                 roomItems.Add(roomItem);
             }
@@ -63,6 +54,20 @@ public class RoomListView : MonoBehaviourPunCallbacks
             roomItem.SetActivityInfo(activity);
             roomItems.Add(roomItem);
         }
+    }
+
+    private void GetAndUpdateActivities()
+    {
+        StartCoroutine(activityService.GetActivities(
+            success: (res) =>
+            {
+                UpdateActivitiesList(res);
+            },
+            error: (e) =>
+            {
+                Debug.Log("Error al cargar las actividades");
+            }
+        ));
     }
 
 }

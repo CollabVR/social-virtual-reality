@@ -15,13 +15,6 @@ public class CreateJoinRoomView : MonoBehaviourPunCallbacks
         // Cuando se crea una sala, tambien se une a la misma automaticamente
         Debug.Log("Creating Room with name: -" + roomName.text + "-");
         PhotonNetwork.CreateRoom(roomName.text);
-
-        // using JoinOrCreateRoom
-        // RoomOptions roomOptions = new RoomOptions
-        // {
-        //     MaxPlayers = 10
-        // };
-        // PhotonNetwork.JoinOrCreateRoom(roomName.text, roomOptions, TypedLobby.Default);
     }
 
     public void JoinRoom()
@@ -39,19 +32,6 @@ public class CreateJoinRoomView : MonoBehaviourPunCallbacks
     public override void OnCreateRoomFailed(short code, string message) 
     {
         Debug.Log("Room creation failed with code: " + code.ToString() + " - " + message);
-    }
-
-    public override void OnJoinedRoom() 
-    {
-        Debug.Log("Joined to Room: -" + roomName.text + "-");
-        Debug.Log("Joined to Room with username: -" + PhotonNetwork.NickName + "-");
-        PhotonNetwork.LoadLevel("Dev Scene");
-    }
-
-    public override void OnJoinRoomFailed(short code, string message) 
-    {
-        Debug.Log("OnJoinRoomFailed -> CODE: " + code);
-        Debug.Log("OnJoinRoomFailed: Message -> " + message);
     }
 
 }

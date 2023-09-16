@@ -10,10 +10,7 @@ public class RoomItem : MonoBehaviour
 {
     [SerializeField]
     private Text _text;
-
     public RoomInfo RoomInfo { get; private set; }
-
-    // temp
     public Activity Activity { get; private set; }
 
 
@@ -25,17 +22,27 @@ public class RoomItem : MonoBehaviour
 
     public void OnClickButton()
     {
+        // for: OnRoomListUpdate
         // Debug.Log("Selected Room: " + RoomInfo.Name);
         // PhotonNetwork.JoinRoom(RoomInfo.Name);
-        Debug.Log("Selected Item");
-        PhotonNetwork.JoinOrCreateRoom(Activity.name, new RoomOptions(), TypedLobby.Default);
+
+        SetControllerActivity(Activity);
+        PhotonNetwork.JoinOrCreateRoom(Activity.name, new RoomOptions
+        {
+            MaxPlayers = Activity.maxParticipants
+        }, TypedLobby.Default);
     }
 
-    // temp
     public void SetActivityInfo(Activity activity)
     {
         Activity = activity;
         _text.text = activity.name;
+    }
+
+    void SetControllerActivity(Activity activity)
+    {
+        var lobbyCanvasController = GameObject.Find("LobbyCanvasController").GetComponent<LobbyCanvasController>();
+        lobbyCanvasController.selectedActivity = activity;
     }
 
 }

@@ -22,6 +22,8 @@ public class PlayerMNKController : MonoBehaviour
     XROrigin _xrOrigin;
     public bool usingVR;
 
+    public bool canMove = true;
+
     void Start()
     {
         characterController = XROrigin.GetComponent<CharacterController>();
@@ -31,9 +33,10 @@ public class PlayerMNKController : MonoBehaviour
 
     void Update()
     {
+
         usingVR = _xrOrigin.CurrentTrackingOriginMode != TrackingOriginModeFlags.Unknown;
 
-        if (view.IsMine && !usingVR)
+        if (view.IsMine && !usingVR && canMove)
         {
             CameraRotation();
             MovePlayer();

@@ -2036,11 +2036,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4656204367169577587, guid: a71a8f93747c2da4aa5e896a620521c4,
-        type: 3}
-      propertyPath: sceneViewId
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 6866032619600364112, guid: a71a8f93747c2da4aa5e896a620521c4,
         type: 3}
       propertyPath: m_Name
@@ -2100,16 +2095,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7599609983163265600, guid: a71a8f93747c2da4aa5e896a620521c4,
-        type: 3}
-      propertyPath: sceneViewId
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7742461978134709392, guid: a71a8f93747c2da4aa5e896a620521c4,
-        type: 3}
-      propertyPath: sceneViewId
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a71a8f93747c2da4aa5e896a620521c4, type: 3}
@@ -5062,6 +5047,7 @@ GameObject:
   - component: {fileID: 1987594752}
   - component: {fileID: 1987594751}
   - component: {fileID: 1987594750}
+  - component: {fileID: 1987594753}
   m_Layer: 0
   m_Name: VoiceManager
   m_TagString: Untagged
@@ -5169,6 +5155,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1987594753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987594749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b0fbee250b054469ce794dc182cc23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1992519802
 GameObject:
   m_ObjectHideFlags: 0

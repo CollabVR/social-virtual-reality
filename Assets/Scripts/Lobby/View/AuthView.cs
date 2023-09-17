@@ -42,7 +42,7 @@ public class AuthView : MonoBehaviour
 
     void LoginSuccess()
     {
-        PhotonNetwork.NickName = "German";
+        PhotonNetwork.NickName = email.text;
         lobbyCanvasController.ShowRoomsPanel();
     }
 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using TMPro;
 using UnityEngine;
 
@@ -9,17 +10,20 @@ public class PlayerNickname : MonoBehaviour
     public Transform canvasNickname;
     public Transform XROriginTransform;
 
-    // Start is called before the first frame update
+    private PhotonView photonView;
     void Start()
     {
-        nickname.text = "German";
+        photonView = GetComponent<PhotonView>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         canvasNickname.rotation = XROriginTransform.rotation;
-    }
 
+        if (photonView.Owner == null) return;
+        if (nickname.text == photonView.Owner.NickName) return;
+        
+        nickname.text = photonView.Owner.NickName;
+    }
 
 }

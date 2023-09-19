@@ -16,7 +16,13 @@ public class VoiceManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
-            recorder.RecordingEnabled = !recorder.RecordingEnabled;
+            // MutePlayer();
         }
+    }
+
+    void MutePlayer()
+    {
+        Debug.Log("MutePlayer");
+        recorder.RecordingEnabled = !recorder.RecordingEnabled;
     }
 }

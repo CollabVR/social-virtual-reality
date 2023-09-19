@@ -28,25 +28,14 @@ public class PlayerMenu : MonoBehaviour
     {
         if (!_photonView.IsMine) return;
 
-        if (Input.GetKeyDown(KeyCode.Escape) || _inputManager.RightPrimaryButtonDownPressed())
+        if (Input.GetKeyDown(KeyCode.Escape) || _inputManager.RightPrimaryButtonDownPressed() || _inputManager.LeftPrimaryButtonDownPressed())
         {
             SetupCanvasTransformation();
             ShowCanvasMenu(!canvasMenu.activeSelf);
         }
 
     }
-
-    void TestInputVR()
-    {
-        if (_inputManager.RightPrimaryButtonPressed()) {
-            Debug.Log("Se presiono el right primary button");
-        }
-        Debug.Log("primary button R: " + _inputManager.RightPrimaryButtonPressed());
-        Debug.Log("secondaty button R: " + _inputManager.RightSecondaryButtonPressed());
-        Debug.Log("primary button L: " +_inputManager.LeftPrimaryButtonPressed());
-        Debug.Log("secondaty button L: " +_inputManager.LeftSecondaryButtonPressed());
-    }
-
+    
     void ShowCanvasMenu(bool active)
     {
         canvasMenu.SetActive(active);

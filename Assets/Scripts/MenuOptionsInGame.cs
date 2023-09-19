@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
+using Photon.Voice.Unity;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,11 +10,21 @@ public class MenuOptionsInGame : MonoBehaviour
 {
     public Button leaveRoom;
     public Button exitGame;
+    public Toggle toggleMuted;
+
+    
+    GameObject VoiceManager;
+    Recorder recorder;
+
 
     void Start()
     {
         leaveRoom.onClick.AddListener(LeaveRoom);
         exitGame.onClick.AddListener(ExitGame);
+        toggleMuted.onValueChanged.AddListener(delegate { MutePlayer(); });
+        
+        VoiceManager = GameObject.Find("VoiceManager");
+        recorder = VoiceManager.GetComponent<Recorder>();
     }
 
     void Update()
@@ -25,6 +36,12 @@ public class MenuOptionsInGame : MonoBehaviour
     {
         PhotonNetwork.LeaveRoom();
         SceneManager.LoadScene("Lobby");
+    }
+
+    void MutePlayer()
+    {
+        Debug.Log("MutePlayer");
+        recorder.RecordingEnabled = !recorder.RecordingEnabled;
     }
 
     void ExitGame()

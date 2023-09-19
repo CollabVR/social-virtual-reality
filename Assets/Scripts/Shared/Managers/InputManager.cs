@@ -14,7 +14,10 @@ public class InputManager : MonoBehaviour
 
     // variables para emular ButtonDownPressed
     private bool previousRightPrimaryButtonState = false;
+    private bool previousRightSecondaryButtonState = false;
 
+    private bool previousLeftPrimaryButtonState = false;
+    private bool previousLeftSecondaryButtonState = false;
 
     void Start()
     {
@@ -77,11 +80,38 @@ public class InputManager : MonoBehaviour
         return rightSecondaryButton;
     }
 
+    public bool RightSecondaryButtonDownPressed()
+    {
+        bool isPressed = false;
+        if (_rightController.TryGetFeatureValue(CommonUsages.secondaryButton, out bool rightSecondaryButton))
+        {
+            if (rightSecondaryButton && !previousRightSecondaryButtonState)
+            {
+                isPressed = true;
+            }
+            previousRightSecondaryButtonState = rightSecondaryButton;
+        }
+        return isPressed;
+    }
 
     public bool LeftPrimaryButtonPressed()
     {
         _leftController.TryGetFeatureValue(CommonUsages.primaryButton, out bool leftPrimaryButton);
         return leftPrimaryButton;
+    }
+
+    public bool LeftPrimaryButtonDownPressed()
+    {
+        bool isPressed = false;
+        if (_leftController.TryGetFeatureValue(CommonUsages.primaryButton, out bool leftPrimaryButton))
+        {
+            if (leftPrimaryButton && !previousLeftPrimaryButtonState)
+            {
+                isPressed = true;
+            }
+            previousLeftPrimaryButtonState = leftPrimaryButton;
+        }
+        return isPressed;
     }
 
     public bool LeftSecondaryButtonPressed()
@@ -90,4 +120,17 @@ public class InputManager : MonoBehaviour
         return leftSecondaryButton;
     }
 
+    public bool LeftSecondaryButtonDownPressed()
+    {
+        bool isPressed = false;
+        if (_leftController.TryGetFeatureValue(CommonUsages.secondaryButton, out bool leftSecondaryButton))
+        {
+            if (leftSecondaryButton && !previousLeftSecondaryButtonState)
+            {
+                isPressed = true;
+            }
+            previousLeftSecondaryButtonState = leftSecondaryButton;
+        }
+        return isPressed;
+    }
 }

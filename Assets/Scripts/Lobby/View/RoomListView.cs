@@ -18,6 +18,7 @@ public class RoomListView : MonoBehaviourPunCallbacks
 
     new void OnEnable()
     {
+        ResetActiviesList();
         GetAndUpdateActivities();
     }
 
@@ -44,6 +45,15 @@ public class RoomListView : MonoBehaviourPunCallbacks
                 roomItems.Add(roomItem);
             }
         }
+    }
+
+    private void ResetActiviesList()
+    {
+        foreach (RoomItem roomItem in roomItems)
+        {
+            Destroy(roomItem.gameObject);
+        }
+        roomItems.Clear();
     }
 
     public void UpdateActivitiesList(List<Activity> activities)

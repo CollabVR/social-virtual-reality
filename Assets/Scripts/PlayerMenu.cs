@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class PlayerMenu : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerMenu : MonoBehaviour
     private Canvas _canvas;
     private RectTransform _canvasTransform;
 
+    private InputManager _inputManager;
     private PlayerMNKController _playerMNKController;
     private PhotonView _photonView;
 
@@ -19,17 +21,30 @@ public class PlayerMenu : MonoBehaviour
         _playerMNKController = GetComponent<PlayerMNKController>();
         _canvas = canvasMenu.GetComponent<Canvas>();
         _canvasTransform = canvasMenu.GetComponent<RectTransform>();
+        _inputManager = GetComponent<InputManager>();
     }
 
     void Update()
     {
         if (!_photonView.IsMine) return;
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || _inputManager.RightPrimaryButtonDownPressed())
         {
             SetupCanvasTransformation();
             ShowCanvasMenu(!canvasMenu.activeSelf);
         }
+
+    }
+
+    void TestInputVR()
+    {
+        if (_inputManager.RightPrimaryButtonPressed()) {
+            Debug.Log("Se presiono el right primary button");
+        }
+        Debug.Log("primary button R: " + _inputManager.RightPrimaryButtonPressed());
+        Debug.Log("secondaty button R: " + _inputManager.RightSecondaryButtonPressed());
+        Debug.Log("primary button L: " +_inputManager.LeftPrimaryButtonPressed());
+        Debug.Log("secondaty button L: " +_inputManager.LeftSecondaryButtonPressed());
     }
 
     void ShowCanvasMenu(bool active)

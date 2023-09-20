@@ -6511,7 +6511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21d4b09feb228104e8822a867ec7a91e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  localXROriginCamera: {fileID: 3908615720366863444}
+  localXROriginCamera: {fileID: 3908615718980652237}
   playerHead: {fileID: 3908615719334337766}
   playerBody: {fileID: 3908615719962543196}
 --- !u!114 &1959582853

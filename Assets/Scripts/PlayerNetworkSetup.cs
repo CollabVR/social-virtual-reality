@@ -5,24 +5,30 @@ using Photon.Pun;
 
 public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
 {
-    public GameObject localXROriginCamera; 
+    public GameObject localXROriginCamera;
 
     public GameObject playerHead;
     public GameObject playerBody;
 
 
-    void Start()
+    void Awake()
     {
         if (photonView.IsMine)
         {
             localXROriginCamera.SetActive(true);
-            
+
+            // var camera = localXROriginCamera.GetComponent<Camera>();
+            // camera.enabled = true;
+
             SetLayerRecursively(playerHead, 8);
             SetLayerRecursively(playerBody, 9);
         }
         else
         {
             localXROriginCamera.SetActive(false);
+
+            // var camera = localXROriginCamera.GetComponent<Camera>();
+            // camera.enabled = false;
 
             SetLayerRecursively(playerHead, 0);
             SetLayerRecursively(playerBody, 0);

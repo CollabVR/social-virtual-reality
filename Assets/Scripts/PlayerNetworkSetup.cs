@@ -17,18 +17,12 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
         {
             localXROriginCamera.SetActive(true);
 
-            // var camera = localXROriginCamera.GetComponent<Camera>();
-            // camera.enabled = true;
-
             SetLayerRecursively(playerHead, 8);
             SetLayerRecursively(playerBody, 9);
         }
         else
         {
             localXROriginCamera.SetActive(false);
-
-            // var camera = localXROriginCamera.GetComponent<Camera>();
-            // camera.enabled = false;
 
             SetLayerRecursively(playerHead, 0);
             SetLayerRecursively(playerBody, 0);

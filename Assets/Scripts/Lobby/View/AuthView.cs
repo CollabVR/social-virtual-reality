@@ -30,20 +30,14 @@ public class AuthView : MonoBehaviour
         success: (user) =>
         {
             authService.SaveUser(user);
-            LoginSuccess();
+            PhotonNetwork.NickName = user.fullName;
+            lobbyCanvasController.ShowRoomsPanel();
         },
         error: (error) =>
         {
             message.text = error;
-            LoginSuccess();
         }
         ));
-    }
-
-    void LoginSuccess()
-    {
-        PhotonNetwork.NickName = email.text;
-        lobbyCanvasController.ShowRoomsPanel();
     }
 
 }

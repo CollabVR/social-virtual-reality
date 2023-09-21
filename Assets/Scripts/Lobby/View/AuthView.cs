@@ -35,6 +35,8 @@ public class AuthView : MonoBehaviour
         },
         error: (error) =>
         {
+            PhotonNetwork.NickName = email.text;
+            lobbyCanvasController.ShowRoomsPanel();
             message.text = error;
         }
         ));

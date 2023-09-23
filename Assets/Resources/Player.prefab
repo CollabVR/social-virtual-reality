@@ -6528,7 +6528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nickname: {fileID: 683204045263834970}
   canvasNickname: {fileID: 4931628494299324679}
-  XROriginTransform: {fileID: 3908615718980652234}
+  XROriginTransform: {fileID: 3908615719962543195}
 --- !u!114 &2371394885074497554
 MonoBehaviour:
   m_ObjectHideFlags: 0

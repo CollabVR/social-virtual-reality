@@ -1,6 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
+using ExitGames.Client.Photon;
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
@@ -35,8 +35,15 @@ public class AuthView : MonoBehaviour
         },
         error: (error) =>
         {
-            PhotonNetwork.NickName = email.text;
-            lobbyCanvasController.ShowRoomsPanel();
+            if (Debug.isDebugBuild)
+            {
+                PhotonNetwork.NickName = email.text;
+                Hashtable playerCustomProps = new Hashtable();
+                playerCustomProps["avatar"] = email.text;;
+                PhotonNetwork.LocalPlayer.SetCustomProperties(playerCustomProps);
+
+                lobbyCanvasController.ShowRoomsPanel();
+            }
             message.text = error;
         }
         ));

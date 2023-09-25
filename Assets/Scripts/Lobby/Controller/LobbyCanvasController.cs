@@ -12,7 +12,7 @@ using TMPro;
 public class LobbyCanvasController : MonoBehaviourPunCallbacks
 {
     public GameObject loadingPanel;
-    public GameObject roomsPanel;
+    public GameObject mainPanel;
     public GameObject authPanel;
 
     public Activity selectedActivity;
@@ -65,19 +65,19 @@ public class LobbyCanvasController : MonoBehaviourPunCallbacks
     {
         loadingPanel.SetActive(true);
         authPanel.SetActive(false);
-        roomsPanel.SetActive(false);
+        mainPanel.SetActive(false);
     }
 
     public void ShowAuthPanel()
     {
         authPanel.SetActive(true);
         loadingPanel.SetActive(false);
-        roomsPanel.SetActive(false);
+        mainPanel.SetActive(false);
     }
 
     public void ShowRoomsPanel()
     {
-        roomsPanel.SetActive(true);
+        mainPanel.SetActive(true);
         loadingPanel.SetActive(false);
         authPanel.SetActive(false);
     }

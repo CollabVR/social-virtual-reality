@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using Photon.Realtime;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,8 @@ using UnityEngine.UI;
 public class RoomItem : MonoBehaviour
 {
     [SerializeField]
-    private Text _text;
+
+    private TMP_Text _text;
     public RoomInfo RoomInfo { get; private set; }
     public Activity Activity { get; private set; }
 

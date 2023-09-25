@@ -38,9 +38,9 @@ public class AuthView : MonoBehaviour
             if (Debug.isDebugBuild)
             {
                 PhotonNetwork.NickName = email.text;
-                Hashtable playerCustomProps = new Hashtable();
-                playerCustomProps["avatar"] = email.text;;
-                PhotonNetwork.LocalPlayer.SetCustomProperties(playerCustomProps);
+                // Hashtable playerCustomProps = new Hashtable();
+                // playerCustomProps["avatar"] = email.text;;
+                // PhotonNetwork.LocalPlayer.SetCustomProperties(playerCustomProps);
 
                 lobbyCanvasController.ShowRoomsPanel();
             }

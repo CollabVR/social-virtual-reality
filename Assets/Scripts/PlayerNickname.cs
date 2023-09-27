@@ -8,7 +8,7 @@ public class PlayerNickname : MonoBehaviour
 {
     public TMP_Text nickname;
     public Transform canvasNickname;
-    public Transform XROriginTransform;
+    public Transform body;
 
     private PhotonView photonView;
     void Start()
@@ -18,7 +18,7 @@ public class PlayerNickname : MonoBehaviour
 
     void Update()
     {
-        canvasNickname.rotation = XROriginTransform.rotation;
+        canvasNickname.rotation = body.rotation;
 
         if (photonView.Owner == null) return;
         if (nickname.text == photonView.Owner.NickName) return;

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public static class JWT
 {
+
     public static Dictionary<string, string> DecodePayload(string payload)
     {
         string decodedPayload = Base64UrlDecode(payload);
@@ -29,11 +30,18 @@ public static class JWT
 
     private static string Base64UrlDecode(string input)
     {
+        Debug.Log("Input " + input);
         string modifiedInput = input.Replace('-', '+').Replace('_', '/');
         int padding = 4 - (modifiedInput.Length % 4);
+        if (padding == 4)
+        {
+            padding = 0;
+        }
         modifiedInput += new string('=', padding);
 
+        Debug.Log("Modified: " + modifiedInput);
         byte[] data = Convert.FromBase64String(modifiedInput);
+        Debug.Log("Data: " + data);
         return Encoding.UTF8.GetString(data);
     }
 

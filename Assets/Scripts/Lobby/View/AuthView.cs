@@ -29,22 +29,19 @@ public class AuthView : MonoBehaviour
         StartCoroutine(authService.SignIn(username: email.text, password: password.text,
         success: (user) =>
         {
+            Debug.Log("Success");
             authService.SaveUser(user);
             PhotonNetwork.NickName = user.fullName;
             lobbyCanvasController.ShowRoomsPanel();
         },
         error: (error) =>
         {
-            if (Debug.isDebugBuild)
-            // if (false)
-            {
-                PhotonNetwork.NickName = email.text;
-                // Hashtable playerCustomProps = new Hashtable();
-                // playerCustomProps["avatar"] = email.text;;
-                // PhotonNetwork.LocalPlayer.SetCustomProperties(playerCustomProps);
-
-                lobbyCanvasController.ShowRoomsPanel();
-            }
+            Debug.Log("Error");
+            // if (Debug.isDebugBuild)
+            // {
+            //     PhotonNetwork.NickName = email.text;
+            //     lobbyCanvasController.ShowRoomsPanel();
+            // }
             message.text = error;
         }
         ));

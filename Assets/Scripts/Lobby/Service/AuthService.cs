@@ -36,13 +36,26 @@ public class AuthService
         }
         else
         {
-            string jsonRes = request.downloadHandler.text;
-            var authResponse = JsonUtility.FromJson<AuthResponse>(jsonRes);
+            try
+            {
+                string jsonRes = request.downloadHandler.text;
+                var authResponse = JsonUtility.FromJson<AuthResponse>(jsonRes);
 
-            string[] jwt = authResponse.accessToken.Split(".");
-            var user = JWT.DecodePayload<User>(jwt[1]);
+                Debug.Log(authResponse.accessToken);
 
-            success(user);
+                string[] jwt = authResponse.accessToken.Split(".");
+                var user = JWT.DecodePayload<User>(jwt[1]);
+
+                success(user);
+            }
+            catch (System.Exception e)
+            {
+                Debug.Log(e.Message);
+                
+                error(e.Message);
+                throw;
+            }
+
         }
     }
 

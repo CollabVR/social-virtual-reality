@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
     {
         if (!MNKController.usingVR)
         {
+            MNKController.canMove = false;
             canvas.renderMode = RenderMode.ScreenSpaceOverlay;
         }
         else 

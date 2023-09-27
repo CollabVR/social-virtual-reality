@@ -36,6 +36,7 @@ public class AuthView : MonoBehaviour
         error: (error) =>
         {
             if (Debug.isDebugBuild)
+            // if (false)
             {
                 PhotonNetwork.NickName = email.text;
                 // Hashtable playerCustomProps = new Hashtable();

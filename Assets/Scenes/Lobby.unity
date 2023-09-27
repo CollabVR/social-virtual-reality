@@ -594,12 +594,17 @@ PrefabInstance:
     - target: {fileID: 2069150408628055930, guid: 2fcb33d3fd81f3c4c91474e4dfeac5e5,
         type: 3}
       propertyPath: sceneViewId
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2069150408628055930, guid: 2fcb33d3fd81f3c4c91474e4dfeac5e5,
+        type: 3}
+      propertyPath: ObservedComponents.Array.data[5]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2212081550728911274, guid: 2fcb33d3fd81f3c4c91474e4dfeac5e5,
         type: 3}
       propertyPath: sceneViewId
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3065025125269249898, guid: 2fcb33d3fd81f3c4c91474e4dfeac5e5,
         type: 3}

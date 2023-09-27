@@ -2017,10 +2017,11 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 3602692350196116327}
-  - {fileID: 0}
+  - {fileID: 4332532779241199612}
   - {fileID: 8053803924047197758}
   - {fileID: 8484821653016153605}
   - {fileID: 8484821652312828677}
+  - {fileID: 0}
   - {fileID: 9181605342741542625}
   - {fileID: 6181240708700676568}
   sceneViewId: 0
@@ -4187,7 +4188,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7860716043573108349}
-  - component: {fileID: 781011479616973825}
+  - component: {fileID: 4332532779241199612}
   m_Layer: 0
   m_Name: head
   m_TagString: Untagged
@@ -4211,7 +4212,7 @@ Transform:
   m_Father: {fileID: 4899376668847484839}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &781011479616973825
+--- !u!114 &4332532779241199612
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

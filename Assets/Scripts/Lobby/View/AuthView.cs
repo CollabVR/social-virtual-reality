@@ -22,6 +22,8 @@ public class AuthView : MonoBehaviour
     void Start()
     {
         login.onClick.AddListener(Login);
+
+        password.contentType = TMP_InputField.ContentType.Password;
     }
 
     void Login()
@@ -29,14 +31,12 @@ public class AuthView : MonoBehaviour
         StartCoroutine(authService.SignIn(username: email.text, password: password.text,
         success: (user) =>
         {
-            Debug.Log("Success");
             authService.SaveUser(user);
             PhotonNetwork.NickName = user.fullName;
             lobbyCanvasController.ShowRoomsPanel();
         },
         error: (error) =>
         {
-            Debug.Log("Error");
             // if (Debug.isDebugBuild)
             // {
             //     PhotonNetwork.NickName = email.text;

@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Voice.Unity;
 using TMPro;
@@ -12,9 +11,13 @@ public class MenuOptionsInGame : MonoBehaviour
     public Button exitGame;
     public Toggle toggleMuted;
 
-    
+
     GameObject VoiceManager;
     Recorder recorder;
+
+
+    AudioSource audioSource;
+    public Slider volumeSlider;
 
 
     void Start()
@@ -22,14 +25,19 @@ public class MenuOptionsInGame : MonoBehaviour
         leaveRoom.onClick.AddListener(LeaveRoom);
         exitGame.onClick.AddListener(ExitGame);
         toggleMuted.onValueChanged.AddListener(delegate { MutePlayer(); });
-        
+
         VoiceManager = GameObject.Find("VoiceManager");
         recorder = VoiceManager.GetComponent<Recorder>();
+        audioSource = GetComponentInParent<AudioSource>();
+        audioSource.volume = 0f;
+
+        volumeSlider.value = audioSource.volume;
+        volumeSlider.onValueChanged.AddListener(delegate { SetVolume(); });
     }
 
     void Update()
     {
-        
+
     }
 
     void LeaveRoom()
@@ -48,4 +56,10 @@ public class MenuOptionsInGame : MonoBehaviour
     {
         Application.Quit();
     }
+
+    void SetVolume()
+    {   
+        audioSource.volume = volumeSlider.value;
+    }
+
 }

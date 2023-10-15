@@ -42,6 +42,13 @@ MonoBehaviour:
   - DestroySpaceship
   - Fire
   - RespawnSpaceship
+  - DropObject
+  - Interact
+  - UpdateCurrentInteractableObject
+  - SetInteractableObject
+  - RPC_DropObject
+  - RPC_GrabObject
+  - SetSpeakerImage
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

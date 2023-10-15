@@ -5,7 +5,6 @@ using Photon.Pun;
 
 public class SpawnPlayers : MonoBehaviourPunCallbacks
 {
-    public GameObject playerPrefab;
 
     void Start()
     {

@@ -61,5 +61,4 @@ public class MenuOptionsInGame : MonoBehaviour
     {   
         audioSource.volume = volumeSlider.value;
     }
-
 }

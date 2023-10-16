@@ -19,8 +19,6 @@ public class LobbyCanvasController : MonoBehaviourPunCallbacks
 
     void Start()
     {
-        // TODO: if user is logged in, show rooms panel
-
         ShowLoadingPanel();
         PhotonNetwork.ConnectUsingSettings();
     }

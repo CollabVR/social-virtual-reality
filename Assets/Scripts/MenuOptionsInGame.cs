@@ -12,7 +12,7 @@ public class MenuOptionsInGame : MonoBehaviour
     public Toggle toggleMuted;
 
 
-    GameObject VoiceManager;
+    VoiceManager voiceManager;
     Recorder recorder;
 
 
@@ -22,16 +22,13 @@ public class MenuOptionsInGame : MonoBehaviour
 
     void Start()
     {
+        voiceManager = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
+        recorder = GameObject.Find("VoiceManager").GetComponent<Recorder>();
+
         leaveRoom.onClick.AddListener(LeaveRoom);
         exitGame.onClick.AddListener(ExitGame);
+
         toggleMuted.onValueChanged.AddListener(delegate { MutePlayer(); });
-
-        VoiceManager = GameObject.Find("VoiceManager");
-        recorder = VoiceManager.GetComponent<Recorder>();
-        audioSource = GetComponentInParent<AudioSource>();
-        audioSource.volume = 0f;
-
-        volumeSlider.value = audioSource.volume;
         volumeSlider.onValueChanged.AddListener(delegate { SetVolume(); });
     }
 
@@ -48,17 +45,16 @@ public class MenuOptionsInGame : MonoBehaviour
 
     void MutePlayer()
     {
-        Debug.Log("MutePlayer");
-        recorder.RecordingEnabled = !recorder.RecordingEnabled;
+        voiceManager.MutePlayer();
+    }
+
+    void SetVolume()
+    {
+        voiceManager.SetMicrophoneVolume(volumeSlider.value);
     }
 
     void ExitGame()
     {
         Application.Quit();
-    }
-
-    void SetVolume()
-    {   
-        audioSource.volume = volumeSlider.value;
     }
 }

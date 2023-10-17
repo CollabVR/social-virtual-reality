@@ -48,7 +48,6 @@ public class PlayerInformationCanvas : MonoBehaviour
 
         if (photonVoiceView.IsRecording)
         {
-            Debug.Log("Voice Manager: " + voiceManager.GetLoudnessFromMicrophone());
             float loudness = voiceManager.GetLoudnessFromMicrophone();
             float yMax = 0.04f;
 

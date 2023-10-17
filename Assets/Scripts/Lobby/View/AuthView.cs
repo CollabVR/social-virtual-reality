@@ -33,6 +33,7 @@ public class AuthView : MonoBehaviour
         {
             authService.SaveUser(user);
             PhotonNetwork.NickName = user.fullName;
+            MetricsManager.Instance.currentUser = user;
             lobbyCanvasController.ShowRoomsPanel();
         },
         error: (error) =>

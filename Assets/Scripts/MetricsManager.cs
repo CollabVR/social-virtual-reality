@@ -5,13 +5,20 @@ using UnityEngine;
 public class MetricsManager : MonoBehaviour
 {
     public static MetricsManager Instance;
+    
+    public Activity currentActivity;
+    public User currentUser;
+
     public int playerCount;
     public float averageActivityDuration;
     public float averageUserConnection;
+
     public Dictionary<string, int> microphoneUsageFrequency = new Dictionary<string, int>();
 
     private void Awake()
     {
+        DontDestroyOnLoad(this.gameObject);
+
         if (Instance == null)
         {
             Instance = this;
@@ -52,6 +59,11 @@ public class MetricsManager : MonoBehaviour
     {
         // lógica para enviar las métricas al servidor a través de la API.
         // Utiliza HTTP o cualquier protocolo adecuado para tu caso.
+    }
+
+    void OnApplicationQuit()
+    {
+        SendMetricsToServer();
     }
 
 }

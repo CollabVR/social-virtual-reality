@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using ExitGames.Client.Photon;
 using Photon.Pun;
+using Photon.Realtime;
 using Photon.Voice.Unity;
 using TMPro;
 using UnityEngine;
@@ -39,6 +41,7 @@ public class MenuOptionsInGame : MonoBehaviour
 
     void LeaveRoom()
     {
+        Destroy(voiceManager.gameObject);
         PhotonNetwork.LeaveRoom();
         SceneManager.LoadScene("Lobby");
     }

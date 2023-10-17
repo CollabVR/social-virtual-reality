@@ -45,6 +45,7 @@ public class RoomItem : MonoBehaviour
     {
         var lobbyCanvasController = GameObject.Find("LobbyCanvasController").GetComponent<LobbyCanvasController>();
         lobbyCanvasController.selectedActivity = activity;
+        PlayerPrefs.SetString(Constants.CURRENT_ACTIVITY, JsonUtility.ToJson(activity));
     }
 
 }

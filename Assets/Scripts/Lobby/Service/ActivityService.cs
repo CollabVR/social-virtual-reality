@@ -27,5 +27,4 @@ public class ActivityService
             success(res.activities);
         }
     }
-
 }

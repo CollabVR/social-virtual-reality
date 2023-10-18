@@ -25,7 +25,7 @@ public class AuthService
         {
             string jsonRes = request.downloadHandler.text;
             var authResponse = JsonUtility.FromJson<AuthResponse>(jsonRes);
-            if (authResponse.message.Count > 0)
+            if (authResponse?.message.Count > 0)
             {
                 error(authResponse.message[0]);
             }

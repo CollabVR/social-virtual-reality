@@ -5,15 +5,15 @@ using UnityEngine;
 public class MetricsManager : MonoBehaviour
 {
     public static MetricsManager Instance;
-    
+    private MetricsService metricsService;
+
+
     public Activity currentActivity;
     public User currentUser;
 
-    public int playerCount;
-    public float averageActivityDuration;
-    public float averageUserConnection;
-
-    public Dictionary<string, int> microphoneUsageFrequency = new Dictionary<string, int>();
+    public ActivityAction activityAction;
+    public UserAction userAction;
+    public int userTimeSpeaking;
 
     private void Awake()
     {
@@ -29,41 +29,44 @@ public class MetricsManager : MonoBehaviour
         }
     }
 
-    // Método para registrar la duración de una actividad.
-    public void LogActivityDuration(float duration)
+    void Start()
     {
-        averageActivityDuration += duration;
+        metricsService = new MetricsService();
+        activityAction = new ActivityAction();
+        userAction = new UserAction();
     }
 
-    // Método para registrar la conexión de un usuario.
-    public void LogUserConnection(float connectionTime)
+    public void SendActivityActionsToServer(string action, int playerCount)
     {
-        averageUserConnection += connectionTime;
+        activityAction.activityId = currentActivity.id;
+        activityAction.userId = currentUser.sub;
+        activityAction.timestamp = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        activityAction.action = action;
+        activityAction.amountParticipants = playerCount; 
+        
+        Debug.Log("Participants: " + activityAction.amountParticipants);
+
+        // metricsService.PostActivityAction(
+        //     activityAction,
+        //     (jsonRes) => Debug.Log("ActivityAction sent to server"),
+        //     (error) => Debug.Log("Error sending ActivityAction to server")
+        // );
     }
 
-    // Método para registrar el uso del micrófono por actividad.
-    public void LogMicrophoneUsage(string activityName)
+    public void SendUserActionsToServer()
     {
-        if (microphoneUsageFrequency.ContainsKey(activityName))
-        {
-            microphoneUsageFrequency[activityName]++;
-        }
-        else
-        {
-            microphoneUsageFrequency.Add(activityName, 1);
-        }
+        userAction.userId = currentUser.sub;
+        userAction.activityId = currentActivity.id;
+        userAction.timeSpeaking = userTimeSpeaking;
+
+        // metricsService.PostUserAction(
+        //     userAction,
+        //     (jsonRes) => Debug.Log("UserAction sent to server"),
+        //     (error) => Debug.Log("Error sending UserAction to server")
+        // );
+
     }
 
-    // Método para enviar las métricas al servidor a través de la API.
-    public void SendMetricsToServer()
-    {
-        // lógica para enviar las métricas al servidor a través de la API.
-        // Utiliza HTTP o cualquier protocolo adecuado para tu caso.
-    }
 
-    void OnApplicationQuit()
-    {
-        SendMetricsToServer();
-    }
 
 }

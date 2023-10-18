@@ -41,6 +41,11 @@ public class MenuOptionsInGame : MonoBehaviour
 
     void LeaveRoom()
     {
+        Debug.Log("Leaving room");
+        MetricsManager.Instance.SendActivityActionsToServer(
+            action: "Left",
+            playerCount: PhotonNetwork.CurrentRoom.PlayerCount - 1);
+
         Destroy(voiceManager.gameObject);
         PhotonNetwork.LeaveRoom();
         SceneManager.LoadScene("Lobby");

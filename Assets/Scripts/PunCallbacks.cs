@@ -11,36 +11,40 @@ public class PunCallbacks : MonoBehaviourPunCallbacks
         DontDestroyOnLoad(this.gameObject);
     }
 
-    // user enter to room
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         Debug.Log("Player enter to room: " + newPlayer.NickName);
     }
 
+    public override void OnPlayerLeftRoom(Player otherPlayer)
+    {
+        Debug.Log("OnPlayerLeftRoom: " + otherPlayer.NickName);
+    }
+
     public override void OnJoinedRoom()
     {
-        Debug.Log("Player joined to room (BYGERMAN): " + PhotonNetwork.CurrentRoom.Name);
+        Debug.Log("Player joined to room: " + PhotonNetwork.CurrentRoom.Name);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        // base.OnJoinedRoom();
-        // Debug.Log("Player joined to room: " + PhotonNetwork.CurrentRoom.Name);
+        MetricsManager.Instance.SendActivityActionsToServer(
+            action: "Join",
+            playerCount: PhotonNetwork.CurrentRoom.PlayerCount);
     }
 
     public override void OnLeftRoom()
     {
-        Debug.Log("Player left the room");
-    }
-
-
-    public override void OnRoomPropertiesUpdate(ExitGames.Client.Photon.Hashtable propertiesThatChanged)
-    {
-        base.OnRoomPropertiesUpdate(propertiesThatChanged);
+        Debug.Log("OnLeftRoom");
     }
 
     public Dictionary<int, Player> PlayersInRoom()
     {
         return PhotonNetwork.CurrentRoom.Players;
+    }
+
+    void OnApplicationQuit()
+    {
+
     }
 
 }

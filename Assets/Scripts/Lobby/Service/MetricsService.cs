@@ -17,7 +17,7 @@ public class MetricsService
             {
                 ["activityId"] = activityAction.activityId.ToString(),
                 ["userId"] = activityAction.userId.ToString(),
-                ["userId"] = activityAction.timestamp,
+                ["timestamp"] = activityAction.timestamp,
                 ["action"] = activityAction.action,
                 ["amountParticipants"] = activityAction.amountParticipants.ToString(),
             });
@@ -59,6 +59,6 @@ public class MetricsService
         {
             error("Ocurrio un error inesperado");
         }
-        
+
     }
 }

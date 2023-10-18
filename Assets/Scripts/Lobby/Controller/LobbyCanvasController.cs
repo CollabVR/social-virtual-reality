@@ -48,7 +48,15 @@ public class LobbyCanvasController : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         Debug.Log("Joining to: " + selectedActivity.name + " with id: " + selectedActivity.id);
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         MetricsManager.Instance.currentActivity = selectedActivity;
+        MetricsManager.Instance.SendActivityActionsToServer(
+            action: "Join",
+            playerCount: PhotonNetwork.CurrentRoom.PlayerCount);
+
         PhotonNetwork.LoadLevel(selectedActivity.environmentId);
     }
 

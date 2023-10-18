@@ -42,15 +42,12 @@ public class MetricsManager : MonoBehaviour
         activityAction.userId = currentUser.sub;
         activityAction.timestamp = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         activityAction.action = action;
-        activityAction.amountParticipants = playerCount; 
-        
-        Debug.Log("Participants: " + activityAction.amountParticipants);
+        activityAction.amountParticipants = playerCount;
 
-        // metricsService.PostActivityAction(
-        //     activityAction,
-        //     (jsonRes) => Debug.Log("ActivityAction sent to server"),
-        //     (error) => Debug.Log("Error sending ActivityAction to server")
-        // );
+        StartCoroutine(metricsService.PostActivityAction(activityAction,
+            (jsonRes) => Debug.Log(jsonRes),
+            (error) => Debug.Log(error)
+        ));
     }
 
     public void SendUserActionsToServer()

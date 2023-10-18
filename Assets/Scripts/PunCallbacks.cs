@@ -21,17 +21,6 @@ public class PunCallbacks : MonoBehaviourPunCallbacks
         Debug.Log("OnPlayerLeftRoom: " + otherPlayer.NickName);
     }
 
-    public override void OnJoinedRoom()
-    {
-        Debug.Log("Player joined to room: " + PhotonNetwork.CurrentRoom.Name);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
-        MetricsManager.Instance.SendActivityActionsToServer(
-            action: "Join",
-            playerCount: PhotonNetwork.CurrentRoom.PlayerCount);
-    }
-
     public override void OnLeftRoom()
     {
         Debug.Log("OnLeftRoom");
@@ -44,7 +33,9 @@ public class PunCallbacks : MonoBehaviourPunCallbacks
 
     void OnApplicationQuit()
     {
-
+        MetricsManager.Instance.SendActivityActionsToServer(
+            action: "Left",
+            playerCount: PhotonNetwork.CurrentRoom.PlayerCount - 1);
     }
 
 }

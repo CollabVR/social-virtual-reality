@@ -53,7 +53,7 @@ public class PlayerInformationCanvas : MonoBehaviour
 
             if (loudness * mouthScale > yMax) loudness = yMax;
             mouth.transform.localScale = new Vector3(x: 0.06f, y: loudness * mouthScale, z: 0.006f);
-            // mouth.transform.localScale = new Vector3(x: 0.06f, y: 0.03f, z: 0.006f);
+            MetricsManager.Instance.userTimeSpeaking += Time.deltaTime;
         }
         else
         {

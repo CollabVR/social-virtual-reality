@@ -13,7 +13,7 @@ public class MetricsManager : MonoBehaviour
 
     public ActivityAction activityAction;
     public UserAction userAction;
-    public int userTimeSpeaking;
+    public float userTimeSpeaking;
 
     private void Awake()
     {
@@ -54,14 +54,12 @@ public class MetricsManager : MonoBehaviour
     {
         userAction.userId = currentUser.sub;
         userAction.activityId = currentActivity.id;
-        userAction.timeSpeaking = userTimeSpeaking;
+        userAction.timeSpeaking = (int)userTimeSpeaking;
 
-        // metricsService.PostUserAction(
-        //     userAction,
-        //     (jsonRes) => Debug.Log("UserAction sent to server"),
-        //     (error) => Debug.Log("Error sending UserAction to server")
-        // );
-
+        StartCoroutine(metricsService.PostUserAction(userAction,
+            (jsonRes) => Debug.Log(jsonRes),
+            (error) => Debug.Log(error)
+        ));
     }
 
 

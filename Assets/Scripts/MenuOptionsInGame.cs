@@ -46,6 +46,9 @@ public class MenuOptionsInGame : MonoBehaviour
             action: "Left",
             playerCount: PhotonNetwork.CurrentRoom.PlayerCount - 1);
 
+        MetricsManager.Instance.SendUserActionsToServer();
+        MetricsManager.Instance.userTimeSpeaking = 0;
+
         Destroy(voiceManager.gameObject);
         PhotonNetwork.LeaveRoom();
         SceneManager.LoadScene("Lobby");
@@ -63,6 +66,13 @@ public class MenuOptionsInGame : MonoBehaviour
 
     void ExitGame()
     {
+        MetricsManager.Instance.SendActivityActionsToServer(
+           action: "Left",
+           playerCount: PhotonNetwork.CurrentRoom.PlayerCount - 1);
+
+        MetricsManager.Instance.SendUserActionsToServer();
+        MetricsManager.Instance.userTimeSpeaking = 0;
+        
         Application.Quit();
     }
 }

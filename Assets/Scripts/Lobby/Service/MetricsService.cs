@@ -29,7 +29,6 @@ public class MetricsService
         else
         {
             Debug.Log("PostActivityAction SUCCESS");
-
             string jsonRes = request.downloadHandler.text;
             success(jsonRes);
         }
@@ -40,26 +39,25 @@ public class MetricsService
     {
         const string url = Constants.API + "/analytics/user-action";
 
-        using UnityWebRequest request = UnityWebRequest
-            .Post(url, new Dictionary<string, string>
-            {
-                ["userId"] = userAction.userId.ToString(),
-                ["activityId"] = userAction.activityId.ToString(),
-                ["timeSpeaking"] = userAction.timeSpeaking.ToString(),
-            });
+        var request = new UnityWebRequest(url, "POST");
+        byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(JsonUtility.ToJson(userAction));
+        request.uploadHandler = (UploadHandler)new UploadHandlerRaw(jsonToSend);
+        request.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
+        request.SetRequestHeader("Content-Type", "application/json");
 
         yield return request.SendWebRequest();
 
         if (request.result != UnityWebRequest.Result.Success)
         {
+            Debug.Log("PostUserAction ERROR");
             string jsonRes = request.downloadHandler.text;
-            error("Ocurrio un error inesperado");
+            error(jsonRes);
         }
         else
         {
+            Debug.Log("PostUserAction SUCCESS");
             string jsonRes = request.downloadHandler.text;
             success(jsonRes);
         }
-
     }
 }

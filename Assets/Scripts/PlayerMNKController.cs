@@ -1,40 +1,47 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Unity.XR.CoreUtils;
 using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class PlayerMNKController : MonoBehaviour
 {
     public GameObject XROrigin;
     public Transform mainCamera;
-    public Transform playerModel;
 
     public float moveSpeed = 1;
+    public float jumpHeight = 1;
     public float mouseSensitivity = 100f;
 
     // Networking
     PhotonView view;
-
-    CharacterController characterController;
-    float xRotation = 0f;
     XROrigin _xrOrigin;
-    public bool usingVR;
+    CharacterController characterController;
+    ActionBasedContinuousMoveProvider _continuosMoveProvider;
 
+    float xRotation = 0f;
+    public bool usingVR;
     public bool canMove = true;
+
+    public float _groundDistance;
+    public bool _isGrounded = false;
+    public Vector3 _groundDistanceOffset;
+    Vector3 velocity;
+    public float _gravity = -9.81f;
 
     void Start()
     {
         characterController = XROrigin.GetComponent<CharacterController>();
         view = GetComponent<PhotonView>();
         _xrOrigin = XROrigin.GetComponent<XROrigin>();
+        _continuosMoveProvider = XROrigin.GetComponent<ActionBasedContinuousMoveProvider>();
+
     }
 
     void Update()
     {
-
         usingVR = _xrOrigin.CurrentTrackingOriginMode != TrackingOriginModeFlags.Unknown;
+        _continuosMoveProvider.enabled = usingVR;
 
         if (view.IsMine && !usingVR && canMove)
         {
@@ -44,25 +51,48 @@ public class PlayerMNKController : MonoBehaviour
         }
     }
 
-    void MovePlayer() 
+    void MovePlayer()
     {
         float horizontalMove = Input.GetAxis("Horizontal"); // x
         float verticalMove = Input.GetAxis("Vertical"); // z
 
         // Movement in local coordinates
-        Vector3 move = XROrigin.transform.right * horizontalMove + XROrigin.transform.forward * verticalMove; 
-        characterController.Move(move * moveSpeed * Time.deltaTime); 
+        Vector3 move = XROrigin.transform.right * horizontalMove + XROrigin.transform.forward * verticalMove;
+        characterController.Move(move * moveSpeed * Time.deltaTime);
     }
 
-    void MoveJump() 
+    void MoveJump()
     {
-        if (Input.GetButtonDown("Jump"))
+        Ray ray = new Ray(XROrigin.transform.position + _groundDistanceOffset, Vector3.down);
+
+        Debug.DrawRay(ray.origin, ray.direction * _groundDistance, Color.red);
+
+        if (Physics.Raycast(ray, out RaycastHit hit, _groundDistance)) 
         {
-           // https://youtu.be/_QajrabyTJc   
+            _isGrounded = true;
         }
+        else
+        {
+            _isGrounded = false;
+        }
+
+        if (_isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f;
+        }
+
+
+        if (Input.GetButtonDown("Jump") && _isGrounded)
+        {
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * _gravity);
+        }
+
+        velocity.y += _gravity * Time.deltaTime;
+        characterController.Move(velocity * Time.deltaTime);
+
     }
 
-    void CameraRotation() 
+    void CameraRotation()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;

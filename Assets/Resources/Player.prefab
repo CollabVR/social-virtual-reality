@@ -700,11 +700,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   XROrigin: {fileID: 4899376668412334583}
   mainCamera: {fileID: 4899376669244860777}
-  playerModel: {fileID: 4899376668847484839}
   moveSpeed: 2
+  jumpHeight: 1
   mouseSensitivity: 100
   usingVR: 0
   canMove: 1
+  _groundDistance: 0.4
+  _isGrounded: 0
+  _groundDistanceOffset: {x: 0, y: 0.2, z: 0}
+  _gravity: -9.81
 --- !u!114 &3065025125269249899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -770,7 +774,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents: []
-  sceneViewId: 0
+  sceneViewId: 4
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &4478195855448078704
@@ -2521,7 +2525,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 5931674623876240965}
-  sceneViewId: 0
+  sceneViewId: 3
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &5931674623876240965
@@ -2630,7 +2634,7 @@ MonoBehaviour:
   - {fileID: 2877222272273795255}
   - {fileID: 9181605342741542625}
   - {fileID: 6181240708700676568}
-  sceneViewId: 0
+  sceneViewId: 2
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!82 &3514050606475850407
@@ -5134,7 +5138,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 1493277242}
-  sceneViewId: 0
+  sceneViewId: 1
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &7683540629451274042

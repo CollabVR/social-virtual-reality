@@ -700,7 +700,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   XROrigin: {fileID: 4899376668412334583}
   mainCamera: {fileID: 4899376669244860777}
-  moveSpeed: 2
+  moveSpeed: 2.2
+  speedMultiplier: 2.5
+  fovSpeedOffset: 60
   jumpHeight: 1
   mouseSensitivity: 100
   usingVR: 0
@@ -774,7 +776,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents: []
-  sceneViewId: 4
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &4478195855448078704
@@ -2525,7 +2527,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 5931674623876240965}
-  sceneViewId: 3
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &5931674623876240965
@@ -2634,7 +2636,7 @@ MonoBehaviour:
   - {fileID: 2877222272273795255}
   - {fileID: 9181605342741542625}
   - {fileID: 6181240708700676568}
-  sceneViewId: 2
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!82 &3514050606475850407
@@ -5138,7 +5140,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 1493277242}
-  sceneViewId: 1
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &7683540629451274042

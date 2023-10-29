@@ -10,6 +10,8 @@ public class PlayerMNKController : MonoBehaviour
     public Transform mainCamera;
 
     public float moveSpeed = 1;
+    public float speedMultiplier = 2f;
+    public float fovSpeedOffset = 60f;
     public float jumpHeight = 1;
     public float mouseSensitivity = 100f;
 
@@ -29,12 +31,14 @@ public class PlayerMNKController : MonoBehaviour
     Vector3 velocity;
     public float _gravity = -9.81f;
 
+
     void Start()
     {
         characterController = XROrigin.GetComponent<CharacterController>();
         view = GetComponent<PhotonView>();
         _xrOrigin = XROrigin.GetComponent<XROrigin>();
         _continuosMoveProvider = XROrigin.GetComponent<ActionBasedContinuousMoveProvider>();
+
 
     }
 
@@ -55,10 +59,24 @@ public class PlayerMNKController : MonoBehaviour
     {
         float horizontalMove = Input.GetAxis("Horizontal"); // x
         float verticalMove = Input.GetAxis("Vertical"); // z
-
         // Movement in local coordinates
         Vector3 move = XROrigin.transform.right * horizontalMove + XROrigin.transform.forward * verticalMove;
-        characterController.Move(move * moveSpeed * Time.deltaTime);
+
+        // button shift
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            characterController.Move(move * moveSpeed * speedMultiplier * Time.deltaTime);
+            if (Camera.main.fieldOfView < 70f) {
+                Camera.main.fieldOfView += fovSpeedOffset * Time.deltaTime;
+            }
+        } else 
+        {
+            characterController.Move(move * moveSpeed * Time.deltaTime);
+            if (Camera.main.fieldOfView > 60f) {
+                Camera.main.fieldOfView -= fovSpeedOffset * Time.deltaTime;
+            }
+        }
+        
     }
 
     void MoveJump()
@@ -67,7 +85,7 @@ public class PlayerMNKController : MonoBehaviour
 
         Debug.DrawRay(ray.origin, ray.direction * _groundDistance, Color.red);
 
-        if (Physics.Raycast(ray, out RaycastHit hit, _groundDistance)) 
+        if (Physics.Raycast(ray, out RaycastHit hit, _groundDistance))
         {
             _isGrounded = true;
         }

@@ -483,12 +483,12 @@ PrefabInstance:
     - target: {fileID: 2069150408628055930, guid: 2fcb33d3fd81f3c4c91474e4dfeac5e5,
         type: 3}
       propertyPath: sceneViewId
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2212081550728911274, guid: 2fcb33d3fd81f3c4c91474e4dfeac5e5,
         type: 3}
       propertyPath: sceneViewId
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3065025125269249898, guid: 2fcb33d3fd81f3c4c91474e4dfeac5e5,
         type: 3}
@@ -553,12 +553,12 @@ PrefabInstance:
     - target: {fileID: 3845525860775345993, guid: 2fcb33d3fd81f3c4c91474e4dfeac5e5,
         type: 3}
       propertyPath: sceneViewId
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5746558635262782065, guid: 2fcb33d3fd81f3c4c91474e4dfeac5e5,
         type: 3}
       propertyPath: sceneViewId
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fcb33d3fd81f3c4c91474e4dfeac5e5, type: 3}
@@ -4997,9 +4997,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a47c7d8ea78866048a5a9e64c5de12e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCount: 0
-  averageActivityDuration: 0
-  averageUserConnection: 0
+  currentActivity:
+    id: 0
+    name: 
+    description: 
+    startTime: 
+    endTime: 
+    maxParticipants: 0
+    environmentId: 
+    status: 
+  currentUser:
+    sub: 0
+    email: 
+    fullName: 
+    roles: []
+  activityAction:
+    activityId: 0
+    userId: 0
+    action: 
+    timestamp: 
+    amountParticipants: 0
+  userAction:
+    userId: 0
+    activityId: 0
+    timeSpeaking: 0
+  userTimeSpeaking: 0
 --- !u!4 &1403735510
 Transform:
   m_ObjectHideFlags: 0

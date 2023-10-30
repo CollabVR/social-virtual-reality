@@ -34,6 +34,8 @@ public class MenuOptionsInGame : MonoBehaviour
         exitGame.onClick.AddListener(ExitGame);
 
         toggleMuted.onValueChanged.AddListener(delegate { MutePlayer(); });
+
+        volumeSlider.value = PlayerPrefs.GetFloat(Constants.MICROPHONE_VOLUME, 1); // 0 - 2.5
         volumeSlider.onValueChanged.AddListener(delegate { SetVolume(); });
 
         cameraSensitivity.value = PlayerPrefs.GetFloat(Constants.CAMERA_SENSITIVITY, 100);
@@ -57,7 +59,7 @@ public class MenuOptionsInGame : MonoBehaviour
 
         Destroy(voiceManager.gameObject);
         PhotonNetwork.LeaveRoom();
-        SceneManager.LoadScene("Lobby");
+        SceneManager.LoadSceneAsync("Lobby");
     }
 
     void MutePlayer()
@@ -67,6 +69,7 @@ public class MenuOptionsInGame : MonoBehaviour
 
     void SetVolume()
     {
+        PlayerPrefs.SetFloat(Constants.MICROPHONE_VOLUME, volumeSlider.value);
         voiceManager.SetMicrophoneVolume(volumeSlider.value);
     }
 

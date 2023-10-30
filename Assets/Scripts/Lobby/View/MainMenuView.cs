@@ -7,7 +7,7 @@ public class MainMenuView : MonoBehaviour
 {
     public Button activitesButton;
     public Button avatarsButton;
-    public Button exitButton;
+    public Button signoffButton;
 
     private MainPanelController mainPanelController;
 
@@ -18,7 +18,7 @@ public class MainMenuView : MonoBehaviour
 
         activitesButton.onClick.AddListener(OnActivitiesButtonSelected);
         avatarsButton.onClick.AddListener(OnAvatarsButtonSelected);
-        exitButton.onClick.AddListener(OnExitButtonSelected);
+        signoffButton.onClick.AddListener(OnSignOffButtonSelected);
     }
 
     void OnActivitiesButtonSelected()
@@ -32,8 +32,12 @@ public class MainMenuView : MonoBehaviour
         mainPanelController.ShowAvatarsPanel();
     }
 
-    void OnExitButtonSelected()
+    void OnSignOffButtonSelected()
     {
-        Application.Quit();
+        LobbyCanvasController lobbyCanvasController = GameObject.Find("LobbyCanvasController").GetComponent<LobbyCanvasController>();
+        PlayerPrefs.DeleteKey(Constants.IS_LOGGED);
+        PlayerPrefs.DeleteKey(Constants.USER);
+        
+        lobbyCanvasController.ShowAuthPanel();
     }
 }

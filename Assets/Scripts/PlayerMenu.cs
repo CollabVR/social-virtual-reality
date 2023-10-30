@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerMenu : MonoBehaviour
 {
@@ -27,6 +29,8 @@ public class PlayerMenu : MonoBehaviour
     void Update()
     {
         if (!_photonView.IsMine) return;
+
+        if (SceneManager.GetActiveScene().buildIndex == 0) return; // lobby scene
 
         if (Input.GetKeyDown(KeyCode.Escape) || _inputManager.RightPrimaryButtonDownPressed() || _inputManager.LeftPrimaryButtonDownPressed())
         {

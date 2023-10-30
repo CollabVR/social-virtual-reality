@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
         {
             MNKController.canMove = false;
             canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            canvas.scaleFactor = 2.3f;
         }
         else 
         {

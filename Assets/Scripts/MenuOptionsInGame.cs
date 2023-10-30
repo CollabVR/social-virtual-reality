@@ -12,7 +12,7 @@ public class MenuOptionsInGame : MonoBehaviour
     public Button leaveRoom;
     public Button exitGame;
     public Toggle toggleMuted;
-
+    public Slider cameraSensitivity;
 
     VoiceManager voiceManager;
     Recorder recorder;
@@ -21,9 +21,12 @@ public class MenuOptionsInGame : MonoBehaviour
     AudioSource audioSource;
     public Slider volumeSlider;
 
+    PlayerMNKController playerMNKController;
+
 
     void Start()
     {
+        playerMNKController = GetComponentInParent<PlayerMNKController>();
         voiceManager = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
         recorder = GameObject.Find("VoiceManager").GetComponent<Recorder>();
 
@@ -32,6 +35,9 @@ public class MenuOptionsInGame : MonoBehaviour
 
         toggleMuted.onValueChanged.AddListener(delegate { MutePlayer(); });
         volumeSlider.onValueChanged.AddListener(delegate { SetVolume(); });
+
+        cameraSensitivity.value = PlayerPrefs.GetFloat(Constants.CAMERA_SENSITIVITY, 100);
+        cameraSensitivity.onValueChanged.AddListener(delegate { SetCameraSensitivity(); });
     }
 
     void Update()
@@ -64,6 +70,18 @@ public class MenuOptionsInGame : MonoBehaviour
         voiceManager.SetMicrophoneVolume(volumeSlider.value);
     }
 
+    void SetCameraSensitivity()
+    {
+        float value = cameraSensitivity.value;
+
+        if (!playerMNKController.usingVR)
+        {
+            playerMNKController.mouseSensitivity = value;
+        }
+
+        PlayerPrefs.SetFloat(Constants.CAMERA_SENSITIVITY, value);
+    }
+
     void ExitGame()
     {
         MetricsManager.Instance.SendActivityActionsToServer(
@@ -72,7 +90,9 @@ public class MenuOptionsInGame : MonoBehaviour
 
         MetricsManager.Instance.SendUserActionsToServer();
         MetricsManager.Instance.userTimeSpeaking = 0;
-        PlayerPrefs.DeleteAll();
+
+        PlayerPrefs.DeleteKey(Constants.IS_LOGGED);
+        PlayerPrefs.DeleteKey(Constants.USER);
 
         Application.Quit();
     }

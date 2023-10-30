@@ -40,7 +40,8 @@ public class PunCallbacks : MonoBehaviourPunCallbacks
         MetricsManager.Instance.SendUserActionsToServer();
         MetricsManager.Instance.userTimeSpeaking = 0;
 
-        PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteKey(Constants.IS_LOGGED);
+        PlayerPrefs.DeleteKey(Constants.USER);
     }
 
 }

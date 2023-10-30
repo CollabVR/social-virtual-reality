@@ -26,7 +26,8 @@ public class LobbyCanvasController : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         Debug.Log("Conected to master:");
-        ShowAuthPanel();
+        if (PlayerPrefs.GetInt(Constants.IS_LOGGED, 0) == 1) ShowRoomsPanel();
+        else ShowAuthPanel();
 
         Debug.Log("Joining to Lobby:");
         PhotonNetwork.JoinLobby();

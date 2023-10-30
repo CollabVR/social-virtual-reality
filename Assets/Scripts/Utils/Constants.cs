@@ -5,4 +5,5 @@ public static class Constants
     public const string AVATAR = "avatar";
     public const string VOLUME = "volume";
     public const string CURRENT_ACTIVITY = "currentActivity";
+    public const string IS_LOGGED = "isLogged";
 }

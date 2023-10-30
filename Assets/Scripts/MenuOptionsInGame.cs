@@ -72,7 +72,8 @@ public class MenuOptionsInGame : MonoBehaviour
 
         MetricsManager.Instance.SendUserActionsToServer();
         MetricsManager.Instance.userTimeSpeaking = 0;
-        
+        PlayerPrefs.DeleteAll();
+
         Application.Quit();
     }
 }

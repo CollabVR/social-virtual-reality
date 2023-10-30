@@ -4736,6 +4736,12 @@ MonoBehaviour:
   activitesButton: {fileID: 653236184}
   avatarsButton: {fileID: 1339664147}
   exitButton: {fileID: 165859945}
+--- !u!1 &1389217415 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3065025125269249898, guid: 2fcb33d3fd81f3c4c91474e4dfeac5e5,
+    type: 3}
+  m_PrefabInstance: {fileID: 149403498}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1393236658
 GameObject:
   m_ObjectHideFlags: 0
@@ -6538,10 +6544,22 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 149403498}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1389217415}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b64114769107b6a4aa2d201e1321b4bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1782370006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389217415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eea972d03f284f418b89723564968aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1832731449

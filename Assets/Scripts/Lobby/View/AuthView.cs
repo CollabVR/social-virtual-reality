@@ -35,6 +35,8 @@ public class AuthView : MonoBehaviour
             PhotonNetwork.NickName = user.fullName;
             MetricsManager.Instance.currentUser = user;
             lobbyCanvasController.ShowRoomsPanel();
+
+            PlayerPrefs.SetInt(Constants.IS_LOGGED, 1);
         },
         error: (error) =>
         {

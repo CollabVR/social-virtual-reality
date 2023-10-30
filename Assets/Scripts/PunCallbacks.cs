@@ -36,6 +36,11 @@ public class PunCallbacks : MonoBehaviourPunCallbacks
         MetricsManager.Instance.SendActivityActionsToServer(
             action: "Left",
             playerCount: PhotonNetwork.CurrentRoom.PlayerCount - 1);
+
+        MetricsManager.Instance.SendUserActionsToServer();
+        MetricsManager.Instance.userTimeSpeaking = 0;
+
+        PlayerPrefs.DeleteAll();
     }
 
 }

@@ -39,6 +39,7 @@ public class SettingsView : MonoBehaviour
         musicVolume.value = PlayerPrefs.GetFloat(Constants.MUSIC_VOLUME, audioManager.musicSource.volume);
         musicVolumeValue.text = (musicVolume.value * 100).ToString().Split('.')[0];
         musicVolume.onValueChanged.AddListener(delegate { SetMusicVolume(); });
+        
 
         // sfx volume
         sfxVolume.value = PlayerPrefs.GetFloat(Constants.SFX_VOLUME, audioManager.sfxSource.volume);

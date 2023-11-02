@@ -9,9 +9,13 @@ public class UIManager : MonoBehaviour
     public Canvas canvas;
     RectTransform _canvasTransform;
 
+    LobbyCanvasController lobbyCanvasController;
+
     void Start()
     {
         _canvasTransform = canvas.GetComponent<RectTransform>();
+        MNKController.canMove = false;
+        lobbyCanvasController = FindObjectOfType<LobbyCanvasController>();
     }
 
     void Update()
@@ -20,7 +24,7 @@ public class UIManager : MonoBehaviour
 
         if (MNKController.usingVR) return;
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) &&  Photon.Pun.PhotonNetwork.InLobby)
         {
             ShowOrHidenCanvas();
         }
@@ -31,7 +35,6 @@ public class UIManager : MonoBehaviour
     {
         if (!MNKController.usingVR)
         {
-            MNKController.canMove = false;
             canvas.renderMode = RenderMode.ScreenSpaceOverlay;
             canvas.scaleFactor = 2.3f;
         }
@@ -52,11 +55,13 @@ public class UIManager : MonoBehaviour
         {
             canvas.enabled = false;
             MNKController.canMove = true;
+            Cursor.lockState = CursorLockMode.Locked;
         }
         else
         {
             canvas.enabled = true;
             MNKController.canMove = false;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }

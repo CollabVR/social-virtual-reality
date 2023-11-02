@@ -18,10 +18,12 @@ public class AuthView : MonoBehaviour
     public TMP_Text message;
 
     public Button login;
+    public Button exit;
 
     void Start()
     {
         login.onClick.AddListener(Login);
+        exit.onClick.AddListener(Exit);
 
         password.contentType = TMP_InputField.ContentType.Password;
     }
@@ -50,4 +52,8 @@ public class AuthView : MonoBehaviour
         ));
     }
 
+    void Exit()
+    {
+        Application.Quit();
+    }
 }

@@ -7,4 +7,6 @@ public static class Constants
     public const string IS_LOGGED = "isLogged";
     public const string CAMERA_SENSITIVITY = "cameraSensitivity";
     public const string MICROPHONE_VOLUME = "microphoneVolume";
+    public const string BODY_TEXTURE = "bodyTexture";
+    public const string HEAD_TEXTURE = "headTexture";
 }

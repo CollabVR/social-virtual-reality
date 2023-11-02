@@ -7,54 +7,41 @@ using Photon.Pun;
 
 public class AvatarItem : MonoBehaviour
 {
-    private TMP_Text avatarName;
+    public string bodySkinName;
     private Button button;
     private Image image;
 
     void Start()
     {
         button = GetComponent<Button>();
-        avatarName = GetComponentInChildren<TMP_Text>();
         image = GetComponent<Image>();
 
         button.onClick.AddListener(OnAvatarSelection);
-
-        SetPrefabAvatarName(PlayerPrefs.GetString(Constants.AVATAR, "Player")); // Default avatar name
+        SetBodyItemIndicator();
     }
 
-    void OnAvatarSelection()
+    void OnAvatarSelection() 
     {
-        SetPrefabAvatarName(avatarName.text);
-        SavePrefabAvatarName();
+        SetBodySkin(bodySkinName);
     }
 
-    void SetPrefabAvatarName(string avatarName)
+    void SetBodySkin(string bodySkinName)
     {
-        Hashtable playerCustomProps = new Hashtable();
-        playerCustomProps[Constants.AVATAR] = avatarName;
-        PhotonNetwork.LocalPlayer.SetCustomProperties(playerCustomProps);
+        var player = GameObject.Find("Player");
+        var avatarManager = player.GetComponent<AvatarManager>();
+        avatarManager.ChangeBodyMaterial(bodySkinName, player.GetPhotonView().ViewID);
     }
 
-    void SavePrefabAvatarName() 
-    {
-        PlayerPrefs.SetString(Constants.AVATAR, avatarName.text);
-    }
-
-    void SelectedAvatarIndicator()
-    {
-        if (avatarName.text == PhotonNetwork.LocalPlayer.CustomProperties[Constants.AVATAR].ToString())
-        {
+    void SetBodyItemIndicator() {
+        var bodyTexture = PlayerPrefs.GetString(Constants.BODY_TEXTURE, "body-1-red");
+        if (bodyTexture.Equals(bodySkinName)) {
             button.GetComponent<Image>().color = Color.white;
-        }
-        else
-        {
+        } else {
             button.GetComponent<Image>().color = Color.gray;
         }
     }
 
-    void OnGUI()
-    {
-        SelectedAvatarIndicator();
+    void OnGUI() {
+        SetBodyItemIndicator();
     }
-
 }

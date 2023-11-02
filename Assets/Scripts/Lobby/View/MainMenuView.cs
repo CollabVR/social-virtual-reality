@@ -11,10 +11,12 @@ public class MainMenuView : MonoBehaviour
     public Button signoffButton;
 
     private MainPanelController mainPanelController;
+    private AudioManager audioManager;
 
 
     void Start()
     {
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         mainPanelController = GetComponentInParent<MainPanelController>();
 
         activitesButton.onClick.AddListener(OnActivitiesButtonSelected);
@@ -26,17 +28,19 @@ public class MainMenuView : MonoBehaviour
 
     void OnActivitiesButtonSelected()
     {
+        audioManager.PlaySFX(audioManager.buttonSelected);
         mainPanelController.ShowRoomsPanel();
-
     }
 
     void OnAvatarsButtonSelected()
     {
+        audioManager.PlaySFX(audioManager.buttonSelected);
         mainPanelController.ShowAvatarsPanel();
     }
 
     void OnSignOffButtonSelected()
     {
+        audioManager.PlaySFX(audioManager.buttonSelected);
         LobbyCanvasController lobbyCanvasController = GameObject.Find("LobbyCanvasController").GetComponent<LobbyCanvasController>();
         PlayerPrefs.DeleteKey(Constants.IS_LOGGED);
         PlayerPrefs.DeleteKey(Constants.USER);
@@ -46,6 +50,7 @@ public class MainMenuView : MonoBehaviour
 
     void OnSettingsButtonSelected()
     {
+        audioManager.PlaySFX(audioManager.buttonSelected);
         mainPanelController.ShowSettingsPanel();
     }
 }

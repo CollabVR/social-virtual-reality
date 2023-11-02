@@ -10,7 +10,6 @@ using UnityEngine.UI;
 public class RoomItem : MonoBehaviour
 {
     [SerializeField]
-
     private TMP_Text _text;
     public RoomInfo RoomInfo { get; private set; }
     public Activity Activity { get; private set; }
@@ -24,6 +23,9 @@ public class RoomItem : MonoBehaviour
 
     public void OnClickButton()
     {
+        var audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        audioManager.PlaySFX(audioManager.itemSelected);
+
         // for: OnRoomListUpdate
         // Debug.Log("Selected Room: " + RoomInfo.Name);
         // PhotonNetwork.JoinRoom(RoomInfo.Name);

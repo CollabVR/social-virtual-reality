@@ -20,8 +20,10 @@ public class AvatarItem : MonoBehaviour
         SetBodyItemIndicator();
     }
 
-    void OnAvatarSelection() 
+    void OnAvatarSelection()
     {
+        var audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        audioManager.PlaySFX(audioManager.itemSelected);
         SetBodySkin(bodySkinName);
     }
 
@@ -32,16 +34,21 @@ public class AvatarItem : MonoBehaviour
         avatarManager.ChangeBodyMaterial(bodySkinName, player.GetPhotonView().ViewID);
     }
 
-    void SetBodyItemIndicator() {
+    void SetBodyItemIndicator()
+    {
         var bodyTexture = PlayerPrefs.GetString(Constants.BODY_TEXTURE, "body-1-red");
-        if (bodyTexture.Equals(bodySkinName)) {
+        if (bodyTexture.Equals(bodySkinName))
+        {
             button.GetComponent<Image>().color = Color.white;
-        } else {
+        }
+        else
+        {
             button.GetComponent<Image>().color = Color.gray;
         }
     }
 
-    void OnGUI() {
+    void OnGUI()
+    {
         SetBodyItemIndicator();
     }
 }

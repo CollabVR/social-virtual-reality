@@ -11,10 +11,12 @@ public class SettingsView : MonoBehaviour
     public TMP_Text cameraSensitivityValue;
 
     PlayerMNKController playerMNKController;
+    AudioManager audioManager;
 
     void Start()
     {
         playerMNKController = GameObject.Find("Player").GetComponent<PlayerMNKController>();
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 
         cameraSensitivity.value = PlayerPrefs.GetFloat(Constants.CAMERA_SENSITIVITY, 100);
         cameraSensitivityValue.text = ((int)cameraSensitivity.value).ToString();
@@ -24,6 +26,8 @@ public class SettingsView : MonoBehaviour
 
     void SetCameraSensitivity()
     {
+        audioManager.PlaySFX(audioManager.sliderChange);
+        
         float value = cameraSensitivity.value;
         cameraSensitivityValue.text = ((int)cameraSensitivity.value).ToString();
 

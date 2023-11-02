@@ -20,6 +20,8 @@ public class HeadSkinItem : MonoBehaviour
 
     void OnAvatarSelection()
     {
+        var audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        audioManager.PlaySFX(audioManager.itemSelected);
         SetHeadSkin(headSkinName);
     }
 

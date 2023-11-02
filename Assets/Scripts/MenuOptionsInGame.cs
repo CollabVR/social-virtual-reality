@@ -17,6 +17,7 @@ public class MenuOptionsInGame : MonoBehaviour
     VoiceManager voiceManager;
     Recorder recorder;
 
+    AudioManager audioManager;
 
     AudioSource audioSource;
     public Slider volumeSlider;
@@ -29,6 +30,8 @@ public class MenuOptionsInGame : MonoBehaviour
         playerMNKController = GetComponentInParent<PlayerMNKController>();
         voiceManager = GameObject.Find("VoiceManager").GetComponent<VoiceManager>();
         recorder = GameObject.Find("VoiceManager").GetComponent<Recorder>();
+
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 
         leaveRoom.onClick.AddListener(LeaveRoom);
         exitGame.onClick.AddListener(ExitGame);
@@ -49,6 +52,8 @@ public class MenuOptionsInGame : MonoBehaviour
 
     void LeaveRoom()
     {
+        audioManager.PlaySFX(audioManager.buttonSelected);
+
         Debug.Log("Leaving room");
         MetricsManager.Instance.SendActivityActionsToServer(
             action: "Left",
@@ -64,17 +69,22 @@ public class MenuOptionsInGame : MonoBehaviour
 
     void MutePlayer()
     {
+        audioManager.PlaySFX(audioManager.checkToggle);
         voiceManager.MutePlayer();
     }
 
     void SetVolume()
     {
+        audioManager.PlaySFX(audioManager.sliderChange);
+
         PlayerPrefs.SetFloat(Constants.MICROPHONE_VOLUME, volumeSlider.value);
         voiceManager.SetMicrophoneVolume(volumeSlider.value);
     }
 
     void SetCameraSensitivity()
     {
+        audioManager.PlaySFX(audioManager.sliderChange);
+
         float value = cameraSensitivity.value;
 
         if (!playerMNKController.usingVR)
@@ -87,6 +97,8 @@ public class MenuOptionsInGame : MonoBehaviour
 
     void ExitGame()
     {
+        audioManager.PlaySFX(audioManager.buttonSelected);
+
         MetricsManager.Instance.SendActivityActionsToServer(
            action: "Left",
            playerCount: PhotonNetwork.CurrentRoom.PlayerCount - 1);

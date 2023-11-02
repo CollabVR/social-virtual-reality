@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class AuthView : MonoBehaviour
 {
     public LobbyCanvasController lobbyCanvasController;
+    private AudioManager audioManager;
 
     AuthService authService = new AuthService();
 
@@ -22,6 +23,8 @@ public class AuthView : MonoBehaviour
 
     void Start()
     {
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+
         login.onClick.AddListener(Login);
         exit.onClick.AddListener(Exit);
 
@@ -30,6 +33,8 @@ public class AuthView : MonoBehaviour
 
     void Login()
     {
+        audioManager.PlaySFX(audioManager.buttonSelected);
+
         StartCoroutine(authService.SignIn(username: email.text, password: password.text,
         success: (user) =>
         {
@@ -54,6 +59,7 @@ public class AuthView : MonoBehaviour
 
     void Exit()
     {
+        audioManager.PlaySFX(audioManager.buttonSelected);
         Application.Quit();
     }
 }

@@ -9,4 +9,6 @@ public static class Constants
     public const string MICROPHONE_VOLUME = "microphoneVolume";
     public const string BODY_TEXTURE = "bodyTexture";
     public const string HEAD_TEXTURE = "headTexture";
+    public const string MUSIC_VOLUME = "musicVolume";
+    public const string SFX_VOLUME = "sfxVolume";
 }

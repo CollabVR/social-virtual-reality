@@ -9,10 +9,26 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class MenuOptionsInGame : MonoBehaviour
 {
+    [Header("Buttons")]
     public Button leaveRoom;
     public Button exitGame;
+
+    [Space(8)]
+    [Header("Toggle")]
     public Toggle toggleMuted;
+    
+    [Space(8)]
+    [Header("camera sensitivity")]
     public Slider cameraSensitivity;
+
+    [Space(8)]
+    [Header("Music Volume")]
+    public Slider musicVolume;
+
+    [Space(8)]
+    [Header("SFX Volume")]
+    public Slider sfxVolume;
+
 
     VoiceManager voiceManager;
     Recorder recorder;
@@ -20,6 +36,9 @@ public class MenuOptionsInGame : MonoBehaviour
     AudioManager audioManager;
 
     AudioSource audioSource;
+
+    [Space(8)]
+    [Header("Microphone Volume")]
     public Slider volumeSlider;
 
     PlayerMNKController playerMNKController;
@@ -43,6 +62,14 @@ public class MenuOptionsInGame : MonoBehaviour
 
         cameraSensitivity.value = PlayerPrefs.GetFloat(Constants.CAMERA_SENSITIVITY, 100);
         cameraSensitivity.onValueChanged.AddListener(delegate { SetCameraSensitivity(); });
+
+        // music volume
+        musicVolume.value = PlayerPrefs.GetFloat(Constants.MUSIC_VOLUME, audioManager.musicSource.volume);
+        musicVolume.onValueChanged.AddListener(delegate { SetMusicVolume(); });
+
+        // sfx volume
+        sfxVolume.value = PlayerPrefs.GetFloat(Constants.SFX_VOLUME, audioManager.sfxSource.volume);
+        sfxVolume.onValueChanged.AddListener(delegate { SetSFXVolume(); });
     }
 
     void Update()
@@ -93,6 +120,26 @@ public class MenuOptionsInGame : MonoBehaviour
         }
 
         PlayerPrefs.SetFloat(Constants.CAMERA_SENSITIVITY, value);
+    }
+
+    void SetMusicVolume()
+    {
+        audioManager.PlaySFX(audioManager.sliderChange);
+
+        float value = musicVolume.value;
+
+        audioManager.musicSource.volume = value;
+        PlayerPrefs.SetFloat(Constants.MUSIC_VOLUME, value);
+    }
+
+    void SetSFXVolume()
+    {
+        audioManager.PlaySFX(audioManager.sliderChange);
+
+        float value = sfxVolume.value;
+
+        audioManager.sfxSource.volume = value;
+        PlayerPrefs.SetFloat(Constants.SFX_VOLUME, value);
     }
 
     void ExitGame()

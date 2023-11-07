@@ -47,7 +47,9 @@ public class PlayerMNKController : MonoBehaviour
         usingVR = _xrOrigin.CurrentTrackingOriginMode != TrackingOriginModeFlags.Unknown;
         _continuosMoveProvider.enabled = usingVR;
 
-        if (view.IsMine && !usingVR && canMove)
+        if (!canMove) return;
+
+        if ((view.IsMine && !usingVR) || SceneManagerHelper.ActiveSceneBuildIndex == 0)
         {
             CameraRotation();
             MovePlayer();

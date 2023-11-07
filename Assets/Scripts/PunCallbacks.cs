@@ -6,9 +6,19 @@ using UnityEngine;
 
 public class PunCallbacks : MonoBehaviourPunCallbacks
 {
+    private static PunCallbacks _instance;
+    
     void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(_instance);
+        }
+        else
+        {
+            Destroy(this);
+        }
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)

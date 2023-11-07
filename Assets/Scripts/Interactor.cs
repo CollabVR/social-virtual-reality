@@ -10,14 +10,14 @@ public class Interactor : MonoBehaviourPunCallbacks
     public GameObject currentInteractableObject = null;
     public Transform grabPosition;
 
-    private Camera camera;
+    // private Camera camera;
     private CanvasUserInterface playerUI;
 
     void Start()
     {
         if (!photonView.IsMine) return;
 
-        camera = gameObject.GetComponentInChildren<Camera>();
+        // camera = gameObject.GetComponentInChildren<Camera>();
         playerUI = gameObject.GetComponentInChildren<CanvasUserInterface>();
     }
 
@@ -41,7 +41,8 @@ public class Interactor : MonoBehaviourPunCallbacks
 
     void Interact()
     {
-        Ray ray = camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        // Ray ray = camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, distance, layerMask))
@@ -61,7 +62,9 @@ public class Interactor : MonoBehaviourPunCallbacks
 
     void ShowInteractableObjectUI()
     {
-        Ray ray = camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        // Ray ray = camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+
         RaycastHit hit;
 
         Debug.DrawRay(ray.origin, ray.direction * distance, Color.red);

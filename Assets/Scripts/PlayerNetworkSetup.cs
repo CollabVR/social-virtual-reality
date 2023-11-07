@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
@@ -13,7 +12,7 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
 
     void Awake()
     {
-        if (photonView.IsMine)
+        if (photonView.IsMine || SceneManagerHelper.ActiveSceneBuildIndex == 0)
         {
             localXROriginCamera.SetActive(true);
 

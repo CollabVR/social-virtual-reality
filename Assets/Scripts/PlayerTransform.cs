@@ -35,7 +35,7 @@ public class PlayerTransform : MonoBehaviour
 
     void Update()
     {
-        if (view.IsMine)
+        if (view.IsMine || SceneManagerHelper.ActiveSceneBuildIndex == 0)
         {
             playerTransform.position = Vector3.Lerp(playerTransform.position, XRHeadCamera.position + headPositionOffset, 0.5f);
          

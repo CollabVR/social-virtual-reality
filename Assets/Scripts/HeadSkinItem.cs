@@ -27,9 +27,23 @@ public class HeadSkinItem : MonoBehaviour
 
     void SetHeadSkin(string headSkinName)
     {
-        var player = GameObject.Find("Player");
-        var avatarManager = player.GetComponent<AvatarManager>();
-        avatarManager.ChangeHeadMaterial(headSkinName, player.GetPhotonView().ViewID);
+        PlayerPrefs.SetString(Constants.HEAD_TEXTURE, headSkinName);
+
+        if (PhotonNetwork.InLobby)
+        {
+            var player = GameObject.Find("Player");
+            var avatarManager = player.GetComponent<AvatarManager>();
+
+            Debug.Log("Changing material in local");
+            avatarManager.ChangeHeadMaterial(headSkinName);
+        }
+        else
+        {
+            Debug.Log("Changing material in remote");
+            var avatarManager = GetComponentInParent<AvatarManager>();
+            avatarManager.photonView.RPC("ChangeHeadMaterial", RpcTarget.AllBufferedViaServer, headSkinName);
+        }
+
     }
 
     void SetHeadItemIndicator()

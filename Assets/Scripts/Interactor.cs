@@ -19,9 +19,6 @@ public class Interactor : MonoBehaviourPunCallbacks
 
         camera = gameObject.GetComponentInChildren<Camera>();
         playerUI = gameObject.GetComponentInChildren<CanvasUserInterface>();
-
-        Debug.Log("Interactor Start()");
-        Debug.Log("Interactor camera: " + camera.name);
     }
 
     void Update()

@@ -23,9 +23,6 @@ public class PlayerVRController : MonoBehaviour
     void Update()
     {
         if (!view.IsMine) return;
-
-        Debug.Log("input Manager: " + inputManager.name);
-        Debug.Log("Continuos Move Provider: " + _continuosMoveProvider.moveSpeed);
     }
 
     void Run()

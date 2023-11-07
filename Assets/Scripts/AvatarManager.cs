@@ -8,7 +8,7 @@ public class AvatarManager : MonoBehaviour
     public MeshRenderer headRenderer;
     public MeshRenderer bodyRenderer;
 
-    private PhotonView photonView;
+    public PhotonView photonView;
 
     void Start()
     {
@@ -20,37 +20,37 @@ public class AvatarManager : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == 0) // Lobby scene
         {
             // change material in local
-            ChangeBodyMaterial(bodyMatName, gameObject.GetPhotonView().ViewID);
-            ChangeHeadMaterial(headMatName, gameObject.GetPhotonView().ViewID);
+            Debug.Log("Changing material in local");
+            ChangeBodyMaterial(bodyMatName);
+            ChangeHeadMaterial(headMatName);
         }
         else
         {
             // change material in remote
-            photonView.RPC("ChangeBodyMaterial", RpcTarget.AllBuffered, bodyMatName, gameObject.GetPhotonView().ViewID);
-            photonView.RPC("ChangeHeadMaterial", RpcTarget.AllBuffered, headMatName, gameObject.GetPhotonView().ViewID);
+            if (!photonView.IsMine) return;
+            Debug.Log("Changing material in remote (Start) for " + gameObject.GetPhotonView().ViewID);
+
+            photonView.RPC(nameof(ChangeBodyMaterial), RpcTarget.AllBuffered, bodyMatName);
+            photonView.RPC(nameof(ChangeHeadMaterial), RpcTarget.AllBuffered, headMatName);
         }
 
     }
 
     [PunRPC]
-    public void ChangeBodyMaterial(string materialName, int objectId)
+    public void ChangeBodyMaterial(string materialName)
     {
-        GameObject avatar = PhotonView.Find(objectId).gameObject;
+        Debug.Log("Changing material in remote (RPC) for " + gameObject.GetPhotonView().ViewID);
         Texture2D texture = Resources.Load<Texture2D>("Textures/bodies/" + materialName);
-        var AvatarManager = avatar.GetComponent<AvatarManager>();
-        AvatarManager.bodyRenderer.material.mainTexture = texture;
+        bodyRenderer.material.mainTexture = texture;
 
-        PlayerPrefs.SetString(Constants.BODY_TEXTURE, materialName);
     }
 
     [PunRPC]
-    public void ChangeHeadMaterial(string materialName, int objectId) {
-        GameObject avatar = PhotonView.Find(objectId).gameObject;
+    public void ChangeHeadMaterial(string materialName)
+    {
         Texture2D texture = Resources.Load<Texture2D>("Textures/heads/" + materialName);
-        var AvatarManager = avatar.GetComponent<AvatarManager>();
-        AvatarManager.headRenderer.material.mainTexture = texture;
+        headRenderer.material.mainTexture = texture;
 
-        PlayerPrefs.SetString(Constants.HEAD_TEXTURE, materialName);
     }
 
 }

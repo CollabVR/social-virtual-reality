@@ -29,9 +29,22 @@ public class AvatarItem : MonoBehaviour
 
     void SetBodySkin(string bodySkinName)
     {
-        var player = GameObject.Find("Player");
-        var avatarManager = player.GetComponent<AvatarManager>();
-        avatarManager.ChangeBodyMaterial(bodySkinName, player.GetPhotonView().ViewID);
+        PlayerPrefs.SetString(Constants.BODY_TEXTURE, bodySkinName);
+
+        if (PhotonNetwork.InLobby)
+        {
+            var player = GameObject.Find("Player");
+            var avatarManager = player.GetComponent<AvatarManager>();
+
+            Debug.Log("Changing material in local");
+            avatarManager.ChangeBodyMaterial(bodySkinName);
+        }
+        else
+        {
+            var avatarManager = GetComponentInParent<AvatarManager>();
+            Debug.Log("Changing material in remote for: " + avatarManager.gameObject.GetPhotonView().ViewID);
+            avatarManager.photonView.RPC("ChangeBodyMaterial", RpcTarget.AllBufferedViaServer, bodySkinName);
+        }
     }
 
     void SetBodyItemIndicator()

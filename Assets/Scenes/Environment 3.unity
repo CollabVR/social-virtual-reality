@@ -190,6 +190,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Probs_Mushroom_2 (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 5288045690710703344, guid: 4c04e2330266df64f97bebf77b0b851a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5936331421784677669, guid: 4c04e2330266df64f97bebf77b0b851a,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -220,6 +225,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Probs_Barrel_1 (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7409881535837442963, guid: 303461167179ef746b25af7e4ae5d949,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7899031532594088233, guid: 303461167179ef746b25af7e4ae5d949,
         type: 3}
@@ -386,6 +396,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Field_1 (54)
       objectReference: {fileID: 0}
+    - target: {fileID: 3283351754009545221, guid: 69964e9ca8eceea41ae2a8baf5a85543,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69964e9ca8eceea41ae2a8baf5a85543, type: 3}
 --- !u!1001 &34929362
@@ -399,6 +414,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Props_Barrel_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7409881535837442963, guid: 303461167179ef746b25af7e4ae5d949,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7899031532594088233, guid: 303461167179ef746b25af7e4ae5d949,
         type: 3}
@@ -539,6 +559,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Field_1 (44)
       objectReference: {fileID: 0}
+    - target: {fileID: 3283351754009545221, guid: 69964e9ca8eceea41ae2a8baf5a85543,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69964e9ca8eceea41ae2a8baf5a85543, type: 3}
 --- !u!4 &42687744 stripped
@@ -613,6 +638,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Env_Tree_Type1_1 (130)
+      objectReference: {fileID: 0}
+    - target: {fileID: 888816198487559307, guid: 248e4c6ddadf3dd4c9a1069251d9654a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 248e4c6ddadf3dd4c9a1069251d9654a, type: 3}
@@ -710,6 +740,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Probs_Stones_Type_4_2 (39)
       objectReference: {fileID: 0}
+    - target: {fileID: 6781590299062170831, guid: 2a8191eb854dd37429b9431c9b3600da,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a8191eb854dd37429b9431c9b3600da, type: 3}
 --- !u!4 &90221875 stripped
@@ -800,6 +835,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Probs_Stones_Type_4_2 (41)
       objectReference: {fileID: 0}
+    - target: {fileID: 6781590299062170831, guid: 2a8191eb854dd37429b9431c9b3600da,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a8191eb854dd37429b9431c9b3600da, type: 3}
 --- !u!4 &139055536 stripped
@@ -819,6 +859,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Probs_Bushes_2 (89)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5167120960404873572, guid: 9652661f74e4c9d41bbfa07756b3ca1d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5548045031003667422, guid: 9652661f74e4c9d41bbfa07756b3ca1d,
         type: 3}
@@ -905,10 +950,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3474586469933685846, guid: 299e7a1cb6456cf4fa6079cf5978df9b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3899520030806763256, guid: 299e7a1cb6456cf4fa6079cf5978df9b,
         type: 3}
       propertyPath: m_Name
       value: Flowers_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899520030806763256, guid: 299e7a1cb6456cf4fa6079cf5978df9b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3899520030807063256, guid: 299e7a1cb6456cf4fa6079cf5978df9b,
         type: 3}
@@ -964,6 +1019,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7237717045736339869, guid: 299e7a1cb6456cf4fa6079cf5978df9b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 299e7a1cb6456cf4fa6079cf5978df9b, type: 3}
@@ -1033,6 +1093,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Env_Tree_Type1_1 (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 888816198487559307, guid: 248e4c6ddadf3dd4c9a1069251d9654a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 248e4c6ddadf3dd4c9a1069251d9654a, type: 3}
@@ -1124,6 +1189,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Tree_Type1_3 (60)
       objectReference: {fileID: 0}
+    - target: {fileID: 891655496606335346, guid: bd6dee57784823a42852a592eb968157,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6dee57784823a42852a592eb968157, type: 3}
 --- !u!4 &200040419 stripped
@@ -1198,6 +1268,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 3356751432538110193, guid: ffbddc4ef9676cc419e81e06aaa836d8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236091592663432304, guid: ffbddc4ef9676cc419e81e06aaa836d8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6119635006381219650, guid: ffbddc4ef9676cc419e81e06aaa836d8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffbddc4ef9676cc419e81e06aaa836d8, type: 3}
@@ -1283,6 +1368,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Probs_Stones_Type_4_2 (40)
       objectReference: {fileID: 0}
+    - target: {fileID: 6781590299062170831, guid: 2a8191eb854dd37429b9431c9b3600da,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a8191eb854dd37429b9431c9b3600da, type: 3}
 --- !u!4 &228087252 stripped
@@ -1358,6 +1448,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Field_1
       objectReference: {fileID: 0}
+    - target: {fileID: 3283351754009545221, guid: 69964e9ca8eceea41ae2a8baf5a85543,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69964e9ca8eceea41ae2a8baf5a85543, type: 3}
 --- !u!1001 &258677711
@@ -1427,6 +1522,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Tree_Type1_1 (129)
       objectReference: {fileID: 0}
+    - target: {fileID: 888816198487559307, guid: 248e4c6ddadf3dd4c9a1069251d9654a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 248e4c6ddadf3dd4c9a1069251d9654a, type: 3}
 --- !u!4 &258677712 stripped
@@ -1449,7 +1549,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &311105921
 Transform:
@@ -1541,6 +1641,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Tree_Type1_1 (39)
       objectReference: {fileID: 0}
+    - target: {fileID: 888816198487559307, guid: 248e4c6ddadf3dd4c9a1069251d9654a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 248e4c6ddadf3dd4c9a1069251d9654a, type: 3}
 --- !u!4 &317331282 stripped
@@ -1630,6 +1735,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Env_Tree_Type1_1 (128)
+      objectReference: {fileID: 0}
+    - target: {fileID: 888816198487559307, guid: 248e4c6ddadf3dd4c9a1069251d9654a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 248e4c6ddadf3dd4c9a1069251d9654a, type: 3}
@@ -1721,6 +1831,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Field_1 (45)
       objectReference: {fileID: 0}
+    - target: {fileID: 3283351754009545221, guid: 69964e9ca8eceea41ae2a8baf5a85543,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69964e9ca8eceea41ae2a8baf5a85543, type: 3}
 --- !u!4 &345268433 stripped
@@ -1801,6 +1916,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Probs_Flower_2 (57)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690187938847726874, guid: 5785d4bb0bbed60429ad4f89c7cdb121,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5785d4bb0bbed60429ad4f89c7cdb121, type: 3}
@@ -1892,6 +2012,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Field_1 (49)
       objectReference: {fileID: 0}
+    - target: {fileID: 3283351754009545221, guid: 69964e9ca8eceea41ae2a8baf5a85543,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69964e9ca8eceea41ae2a8baf5a85543, type: 3}
 --- !u!4 &489871077 stripped
@@ -1967,6 +2092,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Probs_Mushroom_2 (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 5288045690710703344, guid: 4c04e2330266df64f97bebf77b0b851a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5936331421784677669, guid: 4c04e2330266df64f97bebf77b0b851a,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1991,6 +2121,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Probs_Bushes_2 (88)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5167120960404873572, guid: 9652661f74e4c9d41bbfa07756b3ca1d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5548045031003667422, guid: 9652661f74e4c9d41bbfa07756b3ca1d,
         type: 3}
@@ -2157,6 +2292,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Probs_Stones_Type_4_2 (42)
       objectReference: {fileID: 0}
+    - target: {fileID: 6781590299062170831, guid: 2a8191eb854dd37429b9431c9b3600da,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a8191eb854dd37429b9431c9b3600da, type: 3}
 --- !u!4 &512537587 stripped
@@ -2247,6 +2387,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Field_1 (40)
       objectReference: {fileID: 0}
+    - target: {fileID: 3283351754009545221, guid: 69964e9ca8eceea41ae2a8baf5a85543,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69964e9ca8eceea41ae2a8baf5a85543, type: 3}
 --- !u!4 &536940442 stripped
@@ -2266,6 +2411,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Probs_Bushes_2 (87)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5167120960404873572, guid: 9652661f74e4c9d41bbfa07756b3ca1d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5548045031003667422, guid: 9652661f74e4c9d41bbfa07756b3ca1d,
         type: 3}
@@ -2419,6 +2569,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_Grave_6
       objectReference: {fileID: 0}
+    - target: {fileID: 2443274657767698206, guid: ddd74d11347cd27479cabeae00538d11,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3072459863696438692, guid: ddd74d11347cd27479cabeae00538d11,
         type: 3}
       propertyPath: m_RootOrder
@@ -2488,10 +2643,20 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 124808499406074029, guid: 614b31881e31e42439f8d9d3e9f81042,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 263186446749075066, guid: 614b31881e31e42439f8d9d3e9f81042,
         type: 3}
       propertyPath: m_Name
       value: Env_Magic_Well_Broken_1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 263186446749075066, guid: 614b31881e31e42439f8d9d3e9f81042,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 643124148043603136, guid: 614b31881e31e42439f8d9d3e9f81042,
         type: 3}
@@ -2573,6 +2738,16 @@ PrefabInstance:
       propertyPath: InitialModule.startSize.scalar
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 5549084153772404282, guid: 614b31881e31e42439f8d9d3e9f81042,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6090807525980946048, guid: 614b31881e31e42439f8d9d3e9f81042,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6361231906051360081, guid: 614b31881e31e42439f8d9d3e9f81042,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -2592,6 +2767,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7776220605922052906, guid: 614b31881e31e42439f8d9d3e9f81042,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7936519588901156317, guid: 614b31881e31e42439f8d9d3e9f81042,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 614b31881e31e42439f8d9d3e9f81042, type: 3}
@@ -2694,6 +2879,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Tree_Type1_3 (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 891655496606335346, guid: bd6dee57784823a42852a592eb968157,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6dee57784823a42852a592eb968157, type: 3}
 --- !u!4 &780285255 stripped
@@ -2716,7 +2906,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &796672411
 Transform:
@@ -2758,6 +2948,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Probs_Bushes_2 (91)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5167120960404873572, guid: 9652661f74e4c9d41bbfa07756b3ca1d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5548045031003667422, guid: 9652661f74e4c9d41bbfa07756b3ca1d,
         type: 3}
@@ -2919,6 +3114,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Field_1 (47)
       objectReference: {fileID: 0}
+    - target: {fileID: 3283351754009545221, guid: 69964e9ca8eceea41ae2a8baf5a85543,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69964e9ca8eceea41ae2a8baf5a85543, type: 3}
 --- !u!4 &837409450 stripped
@@ -2938,6 +3138,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Branch_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1493958779012619316, guid: b9de24523a11d714db3851b5f0f9d527,
         type: 3}
@@ -3068,6 +3273,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Tree_Type1_3 (58)
       objectReference: {fileID: 0}
+    - target: {fileID: 891655496606335346, guid: bd6dee57784823a42852a592eb968157,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6dee57784823a42852a592eb968157, type: 3}
 --- !u!4 &885805185 stripped
@@ -3086,7 +3296,7 @@ PrefabInstance:
     - target: {fileID: 108507113624698413, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 108507113624698413, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
         type: 3}
@@ -3143,6 +3353,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stump_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 108507113624723981, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6260085879979622260, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -3163,6 +3378,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 106.501
       objectReference: {fileID: 0}
+    - target: {fileID: 6690580599928000713, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7067936637415105213, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d, type: 3}
 --- !u!1001 &906695035
@@ -3180,7 +3405,7 @@ PrefabInstance:
     - target: {fileID: 2662772991135299958, guid: 0314ed550d1a80143b98a357943a8abf,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2662772991135299958, guid: 0314ed550d1a80143b98a357943a8abf,
         type: 3}
@@ -3316,6 +3541,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Tree_Type1_3 (57)
       objectReference: {fileID: 0}
+    - target: {fileID: 891655496606335346, guid: bd6dee57784823a42852a592eb968157,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6dee57784823a42852a592eb968157, type: 3}
 --- !u!4 &909153665 stripped
@@ -3390,6 +3620,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Env_Tree_Type1_3 (62)
+      objectReference: {fileID: 0}
+    - target: {fileID: 891655496606335346, guid: bd6dee57784823a42852a592eb968157,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6dee57784823a42852a592eb968157, type: 3}
@@ -3466,6 +3701,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stump_01
       objectReference: {fileID: 0}
+    - target: {fileID: 108507113624723981, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6260085879979622260, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -3486,6 +3726,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 106.501
       objectReference: {fileID: 0}
+    - target: {fileID: 6690580599928000713, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7067936637415105213, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d, type: 3}
 --- !u!1001 &941104107
@@ -3499,6 +3749,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Props_Bushes_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5167120960404873572, guid: 9652661f74e4c9d41bbfa07756b3ca1d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5548045031003667422, guid: 9652661f74e4c9d41bbfa07756b3ca1d,
         type: 3}
@@ -3641,6 +3896,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Tree_Type1_1 (40)
       objectReference: {fileID: 0}
+    - target: {fileID: 888816198487559307, guid: 248e4c6ddadf3dd4c9a1069251d9654a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 248e4c6ddadf3dd4c9a1069251d9654a, type: 3}
 --- !u!4 &973752647 stripped
@@ -3666,6 +3926,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Branch_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1493958779012619316, guid: b9de24523a11d714db3851b5f0f9d527,
         type: 3}
@@ -3756,6 +4021,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_04
       objectReference: {fileID: 0}
+    - target: {fileID: 8783306491908617939, guid: f02116c209ecd9e488fc4d2cd8996133,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8783306491909106419, guid: f02116c209ecd9e488fc4d2cd8996133,
         type: 3}
       propertyPath: m_RootOrder
@@ -3829,7 +4099,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!108 &1069706577
 Light:
@@ -3995,6 +4265,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Tree_Type1_3 (61)
       objectReference: {fileID: 0}
+    - target: {fileID: 891655496606335346, guid: bd6dee57784823a42852a592eb968157,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6dee57784823a42852a592eb968157, type: 3}
 --- !u!4 &1082760489 stripped
@@ -4085,6 +4360,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Field_1 (42)
       objectReference: {fileID: 0}
+    - target: {fileID: 3283351754009545221, guid: 69964e9ca8eceea41ae2a8baf5a85543,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69964e9ca8eceea41ae2a8baf5a85543, type: 3}
 --- !u!4 &1114416998 stripped
@@ -4160,6 +4440,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Probs_Flower_2 (58)
       objectReference: {fileID: 0}
+    - target: {fileID: 5690187938847726874, guid: 5785d4bb0bbed60429ad4f89c7cdb121,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5785d4bb0bbed60429ad4f89c7cdb121, type: 3}
 --- !u!4 &1114621035 stripped
@@ -4179,6 +4464,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Probs_Bushes_2 (94)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5167120960404873572, guid: 9652661f74e4c9d41bbfa07756b3ca1d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5548045031003667422, guid: 9652661f74e4c9d41bbfa07756b3ca1d,
         type: 3}
@@ -4340,6 +4630,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Field_1 (51)
       objectReference: {fileID: 0}
+    - target: {fileID: 3283351754009545221, guid: 69964e9ca8eceea41ae2a8baf5a85543,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69964e9ca8eceea41ae2a8baf5a85543, type: 3}
 --- !u!1001 &1166151676
@@ -4424,6 +4719,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Field_1 (39)
       objectReference: {fileID: 0}
+    - target: {fileID: 3283351754009545221, guid: 69964e9ca8eceea41ae2a8baf5a85543,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69964e9ca8eceea41ae2a8baf5a85543, type: 3}
 --- !u!4 &1166151677 stripped
@@ -4505,6 +4805,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Timber_2
       objectReference: {fileID: 0}
+    - target: {fileID: 5564054957647728492, guid: ed88511a168c5f54eb472a07356f0179,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed88511a168c5f54eb472a07356f0179, type: 3}
 --- !u!1001 &1259845473
@@ -4578,6 +4883,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Env_Tree_Type1_1 (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 888816198487559307, guid: 248e4c6ddadf3dd4c9a1069251d9654a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 248e4c6ddadf3dd4c9a1069251d9654a, type: 3}
@@ -4659,6 +4969,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Probs_Mushroom_2 (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5288045690710703344, guid: 4c04e2330266df64f97bebf77b0b851a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5936331421784677669, guid: 4c04e2330266df64f97bebf77b0b851a,
         type: 3}
@@ -4760,6 +5075,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Probs_Stones_Type_4_2 (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 6781590299062170831, guid: 2a8191eb854dd37429b9431c9b3600da,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a8191eb854dd37429b9431c9b3600da, type: 3}
 --- !u!1001 &1307695916
@@ -4844,6 +5164,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Field_1 (35)
       objectReference: {fileID: 0}
+    - target: {fileID: 3283351754009545221, guid: 69964e9ca8eceea41ae2a8baf5a85543,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69964e9ca8eceea41ae2a8baf5a85543, type: 3}
 --- !u!4 &1307695917 stripped
@@ -4919,6 +5244,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Tree_Type1_1
       objectReference: {fileID: 0}
+    - target: {fileID: 888816198487559307, guid: 248e4c6ddadf3dd4c9a1069251d9654a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 248e4c6ddadf3dd4c9a1069251d9654a, type: 3}
 --- !u!1001 &1329381639
@@ -4988,6 +5318,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass_02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3356751432538110193, guid: ffbddc4ef9676cc419e81e06aaa836d8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236091592663432304, guid: ffbddc4ef9676cc419e81e06aaa836d8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6119635006381219650, guid: ffbddc4ef9676cc419e81e06aaa836d8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffbddc4ef9676cc419e81e06aaa836d8, type: 3}
 --- !u!1001 &1329772150
@@ -5001,6 +5346,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Probs_Barrel_1 (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7409881535837442963, guid: 303461167179ef746b25af7e4ae5d949,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7899031532594088233, guid: 303461167179ef746b25af7e4ae5d949,
         type: 3}
@@ -5152,6 +5502,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Tree_Type1_3
       objectReference: {fileID: 0}
+    - target: {fileID: 891655496606335346, guid: bd6dee57784823a42852a592eb968157,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6dee57784823a42852a592eb968157, type: 3}
 --- !u!1001 &1347363310
@@ -5220,6 +5575,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Props_Spear_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2066682029454100544, guid: 49138090446c0bc419c049824f9c31c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49138090446c0bc419c049824f9c31c5, type: 3}
@@ -5305,6 +5665,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Field_1 (52)
       objectReference: {fileID: 0}
+    - target: {fileID: 3283351754009545221, guid: 69964e9ca8eceea41ae2a8baf5a85543,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69964e9ca8eceea41ae2a8baf5a85543, type: 3}
 --- !u!1001 &1367101977
@@ -5373,6 +5738,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Env_Tree_Type1_3 (56)
+      objectReference: {fileID: 0}
+    - target: {fileID: 891655496606335346, guid: bd6dee57784823a42852a592eb968157,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6dee57784823a42852a592eb968157, type: 3}
@@ -5455,6 +5825,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Timber_1
       objectReference: {fileID: 0}
+    - target: {fileID: 8827525138125963490, guid: c2374a9d9d6aba443b52e6cea87b6123,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2374a9d9d6aba443b52e6cea87b6123, type: 3}
 --- !u!4 &1406335788 stripped
@@ -5535,6 +5910,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576488453971893466, guid: a778b631c6253a04899cb31bad047c81,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a778b631c6253a04899cb31bad047c81, type: 3}
@@ -5620,6 +6000,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Field_1 (36)
       objectReference: {fileID: 0}
+    - target: {fileID: 3283351754009545221, guid: 69964e9ca8eceea41ae2a8baf5a85543,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69964e9ca8eceea41ae2a8baf5a85543, type: 3}
 --- !u!4 &1481950097 stripped
@@ -5694,6 +6079,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Props_Flower_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690187938847726874, guid: 5785d4bb0bbed60429ad4f89c7cdb121,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5785d4bb0bbed60429ad4f89c7cdb121, type: 3}
@@ -5776,6 +6166,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_Stones_Type_4_2
       objectReference: {fileID: 0}
+    - target: {fileID: 6781590299062170831, guid: 2a8191eb854dd37429b9431c9b3600da,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a8191eb854dd37429b9431c9b3600da, type: 3}
 --- !u!1001 &1569029180
@@ -5789,6 +6184,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Probs_Bushes_2 (93)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5167120960404873572, guid: 9652661f74e4c9d41bbfa07756b3ca1d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5548045031003667422, guid: 9652661f74e4c9d41bbfa07756b3ca1d,
         type: 3}
@@ -5950,6 +6350,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Field_1 (37)
       objectReference: {fileID: 0}
+    - target: {fileID: 3283351754009545221, guid: 69964e9ca8eceea41ae2a8baf5a85543,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69964e9ca8eceea41ae2a8baf5a85543, type: 3}
 --- !u!4 &1570374712 stripped
@@ -6039,6 +6444,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Env_Field_1 (41)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283351754009545221, guid: 69964e9ca8eceea41ae2a8baf5a85543,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69964e9ca8eceea41ae2a8baf5a85543, type: 3}
@@ -6130,6 +6540,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Field_1 (50)
       objectReference: {fileID: 0}
+    - target: {fileID: 3283351754009545221, guid: 69964e9ca8eceea41ae2a8baf5a85543,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69964e9ca8eceea41ae2a8baf5a85543, type: 3}
 --- !u!4 &1601548374 stripped
@@ -6220,6 +6635,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Field_1 (43)
       objectReference: {fileID: 0}
+    - target: {fileID: 3283351754009545221, guid: 69964e9ca8eceea41ae2a8baf5a85543,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69964e9ca8eceea41ae2a8baf5a85543, type: 3}
 --- !u!4 &1613771815 stripped
@@ -6245,6 +6665,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Probs_Bushes_2 (90)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5167120960404873572, guid: 9652661f74e4c9d41bbfa07756b3ca1d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5548045031003667422, guid: 9652661f74e4c9d41bbfa07756b3ca1d,
         type: 3}
@@ -6390,6 +6815,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Env_Tree_Type1_1 (132)
+      objectReference: {fileID: 0}
+    - target: {fileID: 888816198487559307, guid: 248e4c6ddadf3dd4c9a1069251d9654a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 248e4c6ddadf3dd4c9a1069251d9654a, type: 3}
@@ -6596,6 +7026,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Field_1 (38)
       objectReference: {fileID: 0}
+    - target: {fileID: 3283351754009545221, guid: 69964e9ca8eceea41ae2a8baf5a85543,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69964e9ca8eceea41ae2a8baf5a85543, type: 3}
 --- !u!4 &1687377577 stripped
@@ -6624,7 +7059,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1694065249
 Transform:
@@ -6746,6 +7181,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Tree_Type1_1 (131)
       objectReference: {fileID: 0}
+    - target: {fileID: 888816198487559307, guid: 248e4c6ddadf3dd4c9a1069251d9654a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 248e4c6ddadf3dd4c9a1069251d9654a, type: 3}
 --- !u!4 &1714118039 stripped
@@ -6765,6 +7205,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Branch_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1493958779012619316, guid: b9de24523a11d714db3851b5f0f9d527,
         type: 3}
@@ -6849,6 +7294,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Probs_Bushes_2 (92)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5167120960404873572, guid: 9652661f74e4c9d41bbfa07756b3ca1d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5548045031003667422, guid: 9652661f74e4c9d41bbfa07756b3ca1d,
         type: 3}
@@ -6995,6 +7445,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Tree_Type1_3 (59)
       objectReference: {fileID: 0}
+    - target: {fileID: 891655496606335346, guid: bd6dee57784823a42852a592eb968157,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6dee57784823a42852a592eb968157, type: 3}
 --- !u!4 &1780087173 stripped
@@ -7091,6 +7546,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Field_1 (46)
       objectReference: {fileID: 0}
+    - target: {fileID: 3283351754009545221, guid: 69964e9ca8eceea41ae2a8baf5a85543,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69964e9ca8eceea41ae2a8baf5a85543, type: 3}
 --- !u!4 &1816152313 stripped
@@ -7186,6 +7646,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Probs_Stones_Type_4_2 (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 6781590299062170831, guid: 2a8191eb854dd37429b9431c9b3600da,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a8191eb854dd37429b9431c9b3600da, type: 3}
 --- !u!4 &1822679207 stripped
@@ -7208,7 +7673,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1844126317
 Transform:
@@ -7241,7 +7706,7 @@ Transform:
   - {fileID: 425709535}
   - {fileID: 1114621035}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1875591126
 GameObject:
@@ -7257,7 +7722,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1875591127
 Transform:
@@ -7366,6 +7831,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Probs_Flower_2 (70)
       objectReference: {fileID: 0}
+    - target: {fileID: 5690187938847726874, guid: 5785d4bb0bbed60429ad4f89c7cdb121,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5785d4bb0bbed60429ad4f89c7cdb121, type: 3}
 --- !u!4 &1886378419 stripped
@@ -7381,15 +7851,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3474586469933685846, guid: 299e7a1cb6456cf4fa6079cf5978df9b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3899520030806763256, guid: 299e7a1cb6456cf4fa6079cf5978df9b,
         type: 3}
       propertyPath: m_Name
       value: Flowers_02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3899520030806763256, guid: 299e7a1cb6456cf4fa6079cf5978df9b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3899520030807063256, guid: 299e7a1cb6456cf4fa6079cf5978df9b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3899520030807063256, guid: 299e7a1cb6456cf4fa6079cf5978df9b,
         type: 3}
@@ -7440,6 +7920,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7237717045736339869, guid: 299e7a1cb6456cf4fa6079cf5978df9b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 299e7a1cb6456cf4fa6079cf5978df9b, type: 3}
@@ -7524,6 +8009,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Env_Field_1 (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283351754009545221, guid: 69964e9ca8eceea41ae2a8baf5a85543,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69964e9ca8eceea41ae2a8baf5a85543, type: 3}
@@ -7620,6 +8110,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Probs_Stones_Type_4_2 (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 6781590299062170831, guid: 2a8191eb854dd37429b9431c9b3600da,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a8191eb854dd37429b9431c9b3600da, type: 3}
 --- !u!1001 &1991692423
@@ -7704,6 +8199,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Field_1 (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 3283351754009545221, guid: 69964e9ca8eceea41ae2a8baf5a85543,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69964e9ca8eceea41ae2a8baf5a85543, type: 3}
 --- !u!4 &1991692424 stripped
@@ -7719,10 +8219,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1267198441840142800, guid: f1fc5bb90ac285e4486771552d63bcb8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312969165794846113, guid: f1fc5bb90ac285e4486771552d63bcb8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8903058273634794869, guid: f1fc5bb90ac285e4486771552d63bcb8,
         type: 3}
       propertyPath: m_Name
       value: Grass_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903058273634794869, guid: f1fc5bb90ac285e4486771552d63bcb8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8903058273634951509, guid: f1fc5bb90ac285e4486771552d63bcb8,
         type: 3}
@@ -7853,6 +8368,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Tree_Type1_1 (127)
       objectReference: {fileID: 0}
+    - target: {fileID: 888816198487559307, guid: 248e4c6ddadf3dd4c9a1069251d9654a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 248e4c6ddadf3dd4c9a1069251d9654a, type: 3}
 --- !u!4 &2011354215 stripped
@@ -7875,7 +8395,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2031135300
 Transform:
@@ -7995,6 +8515,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Field_1 (48)
       objectReference: {fileID: 0}
+    - target: {fileID: 3283351754009545221, guid: 69964e9ca8eceea41ae2a8baf5a85543,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69964e9ca8eceea41ae2a8baf5a85543, type: 3}
 --- !u!4 &2036601989 stripped
@@ -8069,6 +8594,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Props_Mushroom_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5288045690710703344, guid: 4c04e2330266df64f97bebf77b0b851a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c04e2330266df64f97bebf77b0b851a, type: 3}
@@ -8154,6 +8684,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Field_1 (53)
       objectReference: {fileID: 0}
+    - target: {fileID: 3283351754009545221, guid: 69964e9ca8eceea41ae2a8baf5a85543,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69964e9ca8eceea41ae2a8baf5a85543, type: 3}
 --- !u!1001 &2068071707
@@ -8227,6 +8762,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Env_Tree_Type1_1 (133)
+      objectReference: {fileID: 0}
+    - target: {fileID: 888816198487559307, guid: 248e4c6ddadf3dd4c9a1069251d9654a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 248e4c6ddadf3dd4c9a1069251d9654a, type: 3}
@@ -8329,6 +8869,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Probs_Mushroom_2 (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 5288045690710703344, guid: 4c04e2330266df64f97bebf77b0b851a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5936331421784677669, guid: 4c04e2330266df64f97bebf77b0b851a,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -8359,7 +8904,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!64 &2103675410
 MeshCollider:

@@ -60,25 +60,25 @@ public class RoomListView : MonoBehaviourPunCallbacks
     {
         Activity activity1 = new Activity();
         activity1.name = "Dev Scene";
-        activity1.maxParticipants = 10;
+        activity1.maxParticipants = 20;
         activity1.environmentId = "Dev Scene";
         activities.Add(activity1);
 
         Activity activity2 = new Activity();
         activity2.name = "Environment 1";
-        activity2.maxParticipants = 10;
+        activity2.maxParticipants = 20;
         activity2.environmentId = "Environment 1";
         activities.Add(activity2);
 
         Activity activity3 = new Activity();
         activity3.name = "Environment 2";
-        activity3.maxParticipants = 10;
+        activity3.maxParticipants = 20;
         activity3.environmentId = "Environment 2";
         activities.Add(activity3);
 
         Activity activity4 = new Activity();
         activity4.name = "Environment 3";
-        activity4.maxParticipants = 10;
+        activity4.maxParticipants = 20;
         activity4.environmentId = "Environment 3";
         activities.Add(activity4);
 
@@ -92,6 +92,9 @@ public class RoomListView : MonoBehaviourPunCallbacks
 
     private void GetAndUpdateActivities()
     {
+        // temp:
+        UpdateActivitiesList(new List<Activity>());
+
         StartCoroutine(activityService.GetActivities(
             success: (res) =>
             {

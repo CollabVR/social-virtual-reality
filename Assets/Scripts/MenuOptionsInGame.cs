@@ -9,14 +9,21 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class MenuOptionsInGame : MonoBehaviour
 {
+    [Header("Canvas")]
+    public GameObject menuOptionCanvas;
+    public GameObject avatarCanvas;
+
+    [Space(8)]
     [Header("Buttons")]
+    public Button changeAvatar;
     public Button leaveRoom;
     public Button exitGame;
+    public Button backToMenu;
 
     [Space(8)]
     [Header("Toggle")]
     public Toggle toggleMuted;
-    
+
     [Space(8)]
     [Header("camera sensitivity")]
     public Slider cameraSensitivity;
@@ -52,8 +59,10 @@ public class MenuOptionsInGame : MonoBehaviour
 
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 
+        changeAvatar.onClick.AddListener(ChangeAvatar);
         leaveRoom.onClick.AddListener(LeaveRoom);
         exitGame.onClick.AddListener(ExitGame);
+        backToMenu.onClick.AddListener(backToMenuFromAvatar);
 
         toggleMuted.onValueChanged.AddListener(delegate { MutePlayer(); });
 
@@ -70,11 +79,32 @@ public class MenuOptionsInGame : MonoBehaviour
         // sfx volume
         sfxVolume.value = PlayerPrefs.GetFloat(Constants.SFX_VOLUME, audioManager.sfxSource.volume);
         sfxVolume.onValueChanged.AddListener(delegate { SetSFXVolume(); });
+
+
     }
 
     void Update()
     {
 
+    }
+
+    void backToMenuFromAvatar()
+    {
+        audioManager.PlaySFX(audioManager.buttonSelected);
+
+        menuOptionCanvas.SetActive(true);
+        avatarCanvas.SetActive(false);
+    }
+
+    void ChangeAvatar()
+    {
+        audioManager.PlaySFX(audioManager.buttonSelected);
+
+        menuOptionCanvas.SetActive(false);
+        avatarCanvas.SetActive(true);
+
+
+        Debug.Log("Changing avatar");
     }
 
     void LeaveRoom()
@@ -88,10 +118,11 @@ public class MenuOptionsInGame : MonoBehaviour
 
         MetricsManager.Instance.SendUserActionsToServer();
         MetricsManager.Instance.userTimeSpeaking = 0;
-
+        
+        DestroyPlayerObjectInNetwork();
         Destroy(voiceManager.gameObject);
         PhotonNetwork.LeaveRoom();
-        SceneManager.LoadSceneAsync("Lobby");
+        SceneManager.LoadScene("Lobby");
     }
 
     void MutePlayer()
@@ -153,9 +184,17 @@ public class MenuOptionsInGame : MonoBehaviour
         MetricsManager.Instance.SendUserActionsToServer();
         MetricsManager.Instance.userTimeSpeaking = 0;
 
+        DestroyPlayerObjectInNetwork();
+
         PlayerPrefs.DeleteKey(Constants.IS_LOGGED);
         PlayerPrefs.DeleteKey(Constants.USER);
 
         Application.Quit();
+    }
+
+    void DestroyPlayerObjectInNetwork()
+    {
+        var avatarManager = GetComponentInParent<AvatarManager>();
+        PhotonNetwork.Destroy(avatarManager.gameObject);
     }
 }

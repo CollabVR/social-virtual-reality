@@ -23,6 +23,8 @@ public class PlayerVRController : MonoBehaviour
     void Update()
     {
         if (!view.IsMine) return;
+
+        // Run();
     }
 
     void Run()

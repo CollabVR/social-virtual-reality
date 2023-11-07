@@ -45,7 +45,7 @@ public class PlayerMNKController : MonoBehaviour
     void Update()
     {
         usingVR = _xrOrigin.CurrentTrackingOriginMode != TrackingOriginModeFlags.Unknown;
-        _continuosMoveProvider.enabled = usingVR;
+        _continuosMoveProvider.useGravity = usingVR ? true : false;
 
         if (!canMove) return;
 
@@ -68,17 +68,20 @@ public class PlayerMNKController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             characterController.Move(move * moveSpeed * speedMultiplier * Time.deltaTime);
-            if (Camera.main.fieldOfView < 70f) {
+            if (Camera.main.fieldOfView < 70f)
+            {
                 Camera.main.fieldOfView += fovSpeedOffset * Time.deltaTime;
             }
-        } else 
+        }
+        else
         {
             characterController.Move(move * moveSpeed * Time.deltaTime);
-            if (Camera.main.fieldOfView > 60f) {
+            if (Camera.main.fieldOfView > 60f)
+            {
                 Camera.main.fieldOfView -= fovSpeedOffset * Time.deltaTime;
             }
         }
-        
+
     }
 
     void MoveJump()

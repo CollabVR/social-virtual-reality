@@ -32,7 +32,7 @@ public class PlayerMenu : MonoBehaviour
 
         if (SceneManager.GetActiveScene().buildIndex == 0) return; // lobby scene
 
-        if (Input.GetKeyDown(KeyCode.Escape) || _inputManager.RightPrimaryButtonDownPressed() || _inputManager.LeftPrimaryButtonDownPressed())
+        if (Input.GetKeyDown(KeyCode.Escape) || _inputManager.LeftPrimaryButtonDownPressed())
         {
             SetupCanvasTransformation();
             ShowCanvasMenu(!canvasMenu.activeSelf);
